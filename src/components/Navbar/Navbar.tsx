@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from 'next/link'
-import Image from 'next/image'
-import style from '@/components/Navbar/Navbar.module.css'
+import style from './Navbar.module.css'
 
 const navbar = () => {
   return (

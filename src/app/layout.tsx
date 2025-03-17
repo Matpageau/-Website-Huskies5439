@@ -1,8 +1,9 @@
-import Navbar from "@/components/Navbar/Navbar";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({
   variable: "--font-inter-sans",
@@ -23,7 +24,10 @@ export default function RootLayout({children}: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable}`}>
         <Navbar></Navbar>
-        {children}
+        <div className="main-container">
+          {children}
+        </div>
+        <Footer></Footer>
       </body>
     </html>
   );

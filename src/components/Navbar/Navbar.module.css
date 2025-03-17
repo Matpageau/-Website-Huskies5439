@@ -1,26 +1,20 @@
 .navbar {
+  margin-top: 20px;
   display: flex;
   width: 100%;
-  margin-top: 20px;
   justify-content: center;
 }
 
 .navbar_btnContainer {
+  width: 90%;
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
-}
-
-.topleft_logo {
-  position: absolute;
-  top: 10;
-  left: 30;
 }
 
 .nav_btn {
-  font-size: 32px;
   display: flex;
   align-items: center;
+  font-size: 32px;
   text-wrap: nowrap;
 }
 
