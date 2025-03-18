@@ -1,0 +1,12 @@
+.video_container {
+  margin-top: 35px;
+  width: 100%;
+  height: fit-content;
+}
+
+.video_container > iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  border: 0px;
+}

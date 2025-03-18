@@ -1,0 +1,75 @@
+[
+  {
+    "year": "2025",
+    "gameName": "Reefscape",
+    "gameDescription": "Deux alliances concurrentes sont invitées à implanter des coraux sur leur récif, à récolter des algues et à s’aggriper à la barge avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2025/reefscape.png",
+    "teamAvatar": "iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABFxJREFUWEftl0+IVVUcx+9z/qBguMhFNIMzNBNB6iYdN9pKyKxkNqEm5L4oyhYuFA2shSD5LyUQHXBKW4g6/kFIZ1qU0x8oqIVki2YRLlQiMKTBmffu8XzPeb/zfud3fvfOezOFGy98ePf+zu/P55373ru8bM352+a/YO3ZCTU+V4LgqhO/J4vNQnKzkZxprhOcixzxv+9gU4zcMauO31TjSaxOZ2en6ejo0OuaIBEcOPabWbpz3Czd9Z1Z9uH3pq2tzSHzJK5m53VXg3PE2tvbza1bf5osy0IeYnS+8rMbLpdmYDatEZHgi5fuugEcNM+y8fprDNXJGlCpVMyp4WMGB+UiRue8D/VHHRyor8vjF3IIaDTQ4EM8VLNl0waT51Xzyce7k5x5C/Ca9qKZ3CkI0qLEN5XNyvASeV4L52Bs0XiCrMO85R/9mAou2+1lVh/92ZEKfsMaWeadsa8XTVYZMZXOkRCnW3hk/95wTnL7vvopsObtXY6op83TvmwZiXAxfu6H8EbgW8sVdt3YKQnJ7f/1r4itJ0fNure22xxfj1n05WpJEPhhJAPOh/NKJZXicMGB0zfMm2d+CZKI+1vd+PxJgiCAmJQDfhgXJFIhMDQ05KjWpp3AtTvVIEUghjXKlTOJSLAIP7h5uenpKSdHgldvT6lyOCYn/zUTE38USs5SMBUDiywYZEweBHHQLhK4xptAXp7n7gsF1NlaUMNLzLx7IK/VIsnBwUEnRTx4MOnEcVSr065Wm4mnmSr47Adfh0cd4SXKBQlI+t3LA/fu/e3AmszncySqYP/7Y0ms0bBc0N9iHLh9NbtDU27HSJDA+v37/yRzJFnvG5fUhSI0KUC31x9+1/Cow+FzaPc55bvnbjEECS2JgxwuRUgxAp+vp56Yb3NI6JzlrOVq/VoX5E6RYM/Gi2rB8j0/xEW2MX+ULSyQrNlbjMPnkqT9kX9uzNVps3o2Xohn8QsgC/reG43WAYlxvGC8gx5/xJL67vVvG0tn0YlMJno3xwWcZ7ZeUWuAlk9o+UDLLRV8fsf1RqLYMYCfI56PGF61Gor12xoep1pal0S3uO+da06KixF8CKfv3VGXTwMpLvPpml5pjsyTJJ/BIsoayeEaRTllNaBpQYBmHIrxdTrnMRmnmFzrfvVUlAdaEuRQYzmM4pKZ4t2vnTa9Wy6n6+ECi0oCIQdoAxHLPrVPjgK0Oq0PJwjiHWhbDJJhBU1JooikTx0tlyi8xUUN8Cb4GofntUJZ/aw/gxJ3e91/Ff5nyj8xtPxmSQS7Xh42i1ceCnSt/zxa11jy+jmX6yUhSJLlck+/dDKeZWfLnMx9e+oXi1ccjAo4vIgjaxqS5XK8JsL2o5yeTRcaO6gmM/gbIWjnJJDDq1YDZL6E584geDi65oXFNTGt1shfEieoJToGGue8qLSG0WqN+kOtJRaBgq5XvjBPvnBAXS+C6rQ1SfeGL4Nc17rh1gQfBY8F58Yh8xAJmKLUEKOVbwAAAABJRU5ErkJggg==",
+    "robotAttribut": ["Ascenceur 3 étages", "Grimpeur sur l'ascenceur", "Poignet manipulateur reliés", "Base swerve", "2 Corails AUTO"],
+    "robotImage": "/images/2025/2025robot.jpg",
+    "robotName": "Triton",
+    "revealId": "6EEXviGnt40",
+    "githubLink": "https://github.com/huskies5439/Reefscape2025",
+    "cadLink": "https://grabcad.com/library/reefscape-huskies-5439-1"
+  },{
+    "year": "2024",
+    "gameName": "Crescendo",
+    "gameDescription": "Deux alliances concurrentes sont invitées à lancer des notes dans le haut-parleur, mettre des notes dans l'amplificateur et à s’aggriper à une chaîne sur la scène avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2024/crescendo.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur au sol", "Lanceur déployable", "Base swerve", "3 Notes speaker AUTO"],
+    "robotImage": "/images/2024/2024robot.png",
+    "robotName": "",
+    "revealId": "HaWGaVnSL2g",
+    "githubLink": "https://github.com/huskies5439/Crescendo2024",
+    "cadLink": ""
+  },{
+    "year": "2023",
+    "gameName": "Charged up",
+    "gameDescription": "Deux alliances concurrentes sont invitées à placer des cônes sur des tiges, mettre des cubes gonflables sur des étagères et se ballancer sur une plateforme avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2023/chargedup.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Manipuleur parallèle", "6 roues pneumatiques", "1 cone et balancement AUTO"],
+    "robotImage": "/images/2023/2023robot.png",
+    "robotName": "",
+    "revealId": "-4qO4Ep-VDM",
+    "githubLink": "https://github.com/huskies5439/ChargedUp",
+    "cadLink": "https://grabcad.com/library/full-assembly-huskies-5439-frc-charged-up-2023-1"
+  },{
+    "year": "2022",
+    "gameName": "Rapid react",
+    "gameDescription": "Deux alliances concurrentes sont invitées à lancer des ballons dans le module central et grimper sur des barres horizontales avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2022/rapidreact.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur sur par-choc", "Lanceur à vitesse variable", "2 omniweels 2 roues pneumatiques", "1 ballon AUTO"],
+    "robotImage": "/images/2022/2022robot.png",
+    "robotName": "",
+    "revealId": "vdlbjnbGnh8",
+    "githubLink": "https://github.com/huskies5439/RapidReact",
+    "cadLink": "https://grabcad.com/library/full-assembly-huskies-5439-frc-rapid-react-2022-1"
+  },{
+    "year": "2021",
+    "gameName": "Infinite recharge at home",
+    "gameDescription": "Défi de programmation COVID",
+    "gameLogo": "/images/2020/infinite.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur sur par-choc", "Lanceur à vitesse variable", "6 roues pneumatiques", "Tourelle 90deg"],
+    "robotImage": "/images/2020/2020robot.png",
+    "robotName": "",
+    "revealId": "",
+    "githubLink": "https://github.com/huskies5439/InfiniteRecharge",
+    "cadLink": ""
+  },{
+    "year": "2020",
+    "gameName": "Infinite recharge",
+    "gameDescription": "Deux alliances concurrentes sont invitées à lancer des ballons dans le module central et grimper sur des barres horizontales avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2020/infinite.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur sur par-choc", "Lanceur à vitesse variable", "6 roues pneumatiques", "Tourelle 90deg"],
+    "robotImage": "/images/2020/2020robot.png",
+    "robotName": "",
+    "revealId": "",
+    "githubLink": "https://github.com/huskies5439/InfiniteRecharge",
+    "cadLink": ""
+  }
+]

@@ -1,0 +1,79 @@
+.event_container {
+  display: flex;
+  margin-top: 35px;
+}
+
+.event_infos {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.event_stats {
+  width: 60%;
+}
+
+.iconText {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  gap: 5px;
+  font-size: 20px;
+}
+
+.reward_container {
+  margin-top: 50px;
+}
+
+.font64 {
+  font-size: 64px;
+}
+
+.font40 {
+  font-size: 40px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.link {
+  color: var(--blue);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* MatchTable.module.css */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 8px 3px;
+  border: 1px solid #929292;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+.redAlliance {
+  background-color: rgb(255, 221, 221);
+}
+
+.blueAlliance {
+  background-color: rgb(238, 238, 255);
+}
+
+.winner {
+  font-weight: 700;
+}
+
+.currentTeam {
+  text-decoration: underline;
+}

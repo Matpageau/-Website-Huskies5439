@@ -14,7 +14,7 @@ const navbar = () => {
           <Link href={'/equipe'}>Équipe</Link>
         </div>
         <div className={style.nav_btn}>
-          <Link href={'/nos_saisons'}>Nos saisons</Link>
+          <Link href={'/saisons/2025'}>Nos saisons</Link>
         </div>
         <div className={style.nav_btn}>
           <Link href={'/medias'}>Médias</Link>

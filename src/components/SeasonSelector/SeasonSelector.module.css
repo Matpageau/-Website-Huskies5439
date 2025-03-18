@@ -1,0 +1,11 @@
+.seasonSelector {
+  position: absolute;
+  left: 50px;
+  top: 210px;
+  width: 200px;
+  height: 50px;
+  font-size: 24px;
+  font-family: var(--font-inter-sans), sans-serif;
+  text-align: center;
+  border-radius: 10px;
+}

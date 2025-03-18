@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import style from "./accueil.module.css";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div className="main">
-      <div className={style.presentation_container}>
+    <>
+      <div className="presentation_container">
         <h1 className="page-title">Huskies 5439</h1>
         <img className={style.team_picture} src="/images/equipe2023.jpg" alt="equipe2023" />
       </div>
@@ -24,6 +24,6 @@ export default function Home() {
         </p>
       <img className={style.presentation_picture} src="/images/robotSuspendu.jpg" alt="Robot station" />
       </div>
-    </div>
+    </>
   );
 }
