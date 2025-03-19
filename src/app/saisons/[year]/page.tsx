@@ -54,7 +54,7 @@ export default async function Saisons({
   });
 
   const eventsDatas = await Promise.all(eventResultsPromises);
-
+  
   return (
     <>
       <div className="presentation_container">
@@ -127,20 +127,24 @@ export default async function Saisons({
           ))}
         </div>
         <Separator />
-        <div className={style.ressources_container}>
-          <h1 className={style.font40}>Ressources</h1>
-          {yearData.githubLink != "" ? 
-            <Link className={style.link} href={yearData.githubLink} target="_blank">Github</Link>
-            :
-            <></>
-          }
-          {yearData.cadLink != "" ?
-            <Link className={style.link} href={yearData.cadLink} target="_blank">CAD</Link>
-            :
-            <></>
-          }
-        </div>
-        <Separator />
+        {yearData.githubLink != "" || yearData.cadLink != "" ?
+          <div className={style.ressources_container}>
+            <h1 className={style.font40}>Ressources</h1>
+            {yearData.githubLink != "" ? 
+              <Link className={style.link} href={yearData.githubLink} target="_blank">Github</Link>
+              :
+              <></>
+            }
+            {yearData.cadLink != "" ?
+              <Link className={style.link} href={yearData.cadLink} target="_blank">CAD</Link>
+              :
+              <></>
+            }
+            <Separator />
+          </div>
+        :
+          <></>
+        }
       </div>
     </>
   );

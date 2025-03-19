@@ -71,5 +71,65 @@
     "revealId": "",
     "githubLink": "https://github.com/huskies5439/InfiniteRecharge",
     "cadLink": ""
+  },{
+    "year": "2019",
+    "gameName": "Deep space",
+    "gameDescription": "Deux alliances concurrentes sont invitées à bloquer les troues dans les fusées avec des panneax, mettre des ballons dans les trous frontaux des fusées et monter sur un podium avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2019/deepspace.png",
+    "teamAvatar": "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",
+    "robotAttribut": ["Ascenceur 3 étages", "Ascenceur pivotant", "Roues mécanums"],
+    "robotImage": "/images/2019/2019robot.png",
+    "robotName": "",
+    "revealId": "cPoPYPPumvM",
+    "githubLink": "",
+    "cadLink": ""
+  },{
+    "year": "2018",
+    "gameName": "Power Up",
+    "gameDescription": "Deux alliances concurrentes sont invitées à mettre de caisses de lait dans 3 ballances pour en prendre avantage et grimper sur une petite barres horizontales au centre du terrain avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2018/powerup.png",
+    "teamAvatar": "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",
+    "robotAttribut": ["Ascenceur à mat simple", "Poignet pneumatique sur la pince", "6 roues pneumatiques", "1 cubes AUTO"],
+    "robotImage": "/images/2020/2020robot.png",
+    "robotName": "",
+    "revealId": "uL-X4qEze0g",
+    "githubLink": "",
+    "cadLink": ""
+  },{
+    "year": "2017",
+    "gameName": "Steamwork",
+    "gameDescription": "Deux alliances concurrentes sont invitées à lancer des ballons dans le module central et grimper sur des barres horizontales avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2020/infinite.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur sur par-choc", "Lanceur à vitesse variable", "6 roues pneumatiques", "Tourelle 90deg"],
+    "robotImage": "/images/2020/2020robot.png",
+    "robotName": "",
+    "revealId": "",
+    "githubLink": "https://github.com/huskies5439/InfiniteRecharge",
+    "cadLink": ""
+  },{
+    "year": "2016",
+    "gameName": "Infinite recharge",
+    "gameDescription": "Deux alliances concurrentes sont invitées à lancer des ballons dans le module central et grimper sur des barres horizontales avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2020/infinite.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur sur par-choc", "Lanceur à vitesse variable", "6 roues pneumatiques", "Tourelle 90deg"],
+    "robotImage": "/images/2020/2020robot.png",
+    "robotName": "",
+    "revealId": "",
+    "githubLink": "https://github.com/huskies5439/InfiniteRecharge",
+    "cadLink": ""
+  },{
+    "year": "2015",
+    "gameName": "Infinite recharge",
+    "gameDescription": "Deux alliances concurrentes sont invitées à lancer des ballons dans le module central et grimper sur des barres horizontales avant que le temps ne s’écoule.",
+    "gameLogo": "/images/2020/infinite.png",
+    "teamAvatar": "",
+    "robotAttribut": ["Gobeur sur par-choc", "Lanceur à vitesse variable", "6 roues pneumatiques", "Tourelle 90deg"],
+    "robotImage": "/images/2020/2020robot.png",
+    "robotName": "",
+    "revealId": "",
+    "githubLink": "https://github.com/huskies5439/InfiniteRecharge",
+    "cadLink": ""
   }
 ]

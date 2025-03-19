@@ -118,7 +118,7 @@ const EventData: React.FC<EventDataProps> = ({ event, awards, matchsData }) => {
                   </tr>
                 )}
                 <tr>
-                  <td><a href={match.matchVideoLink}><CirclePlay color='Blue' height={15} /></a></td>
+                  <td>{match.matchVideoLink ? <Link href={match.matchVideoLink} target="_blank"><CirclePlay color='Blue' height={15} /></Link> : <></>}</td>
                   <td>{match.description}</td>
                   {/* Red Alliance Teams in Separate Cells with Red Background */}
                   {match.teams.filter(team => team.station.startsWith("Red")).map((team, redIndex) => (

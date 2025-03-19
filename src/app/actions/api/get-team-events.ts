@@ -14,6 +14,21 @@ export default async function getTeamEvents({ year }: GetTeamParams) {
       'Authorization': 'Basic bWFsYWRhcml4Ojk3NjNmZWRjLWUwNjAtNDJhYi1hOTBiLWMzZWRmMDJjNjZkZQ=='
     }
   };
+
+  if(year == "2020") {
+    return [
+      {
+        "code": "QCMO",
+        "name": "Festival de Robotique a Montreal Regional (Annulé)",
+        "city": "Montreal",
+        "stateprov": "QC",
+        "country": "Canada",
+        "dateStart": "2020-04-08T00:00:00",
+        "dateEnd": "2020-04-11T23:59:59",
+        "website": null,
+      }
+    ]
+  }
   
   try {
     const response = await axios.request(config)
