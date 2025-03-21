@@ -44,36 +44,3 @@
 .link:hover {
   text-decoration: underline;
 }
-
-/* MatchTable.module.css */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table th, .table td {
-  padding: 8px 3px;
-  border: 1px solid #929292;
-  text-align: center;
-  font-size: 14px;
-}
-
-.table th {
-  background-color: #f4f4f4;
-}
-
-.redAlliance {
-  background-color: rgb(255, 221, 221);
-}
-
-.blueAlliance {
-  background-color: rgb(238, 238, 255);
-}
-
-.winner {
-  font-weight: 700;
-}
-
-.currentTeam {
-  text-decoration: underline;
-}

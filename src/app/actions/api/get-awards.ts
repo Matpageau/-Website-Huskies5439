@@ -1,12 +1,13 @@
-export async function getMatchsResults(event_key: string) {
+export async function getAwards(event_code: string) {
   try {   
-    const res = await fetch(`https://www.thebluealliance.com/api/v3/team/frc5439/event/${event_key}/matches`, {
+    const res = await fetch(`https://www.thebluealliance.com/api/v3/team/frc5439/event/${event_code}/awards`, {
       method: 'GET',
       headers: {
         'X-TBA-Auth-Key': 'ExMO0gWOUqWU14KvPGkP5m7nAy7GslibiaGrH72NcWbkFtZauH3HXzc3i7sAvxUj',
       },
     });
 
+    // Check if the response status is ok
     if (!res.ok) {
       throw new Error(`Failed to fetch events, status: ${res.status}`);
     }

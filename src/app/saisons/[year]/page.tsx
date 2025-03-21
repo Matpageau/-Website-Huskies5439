@@ -1,59 +1,44 @@
 /* eslint-disable @next/next/no-img-element */
-import style from "../saisons.module.css"
-import SeasonSelector from "@/components/SeasonSelector/SeasonSelector"
+import { getTeamEvents } from "@/app/actions/api/get-team-events";
+import SeasonSelector from "@/components/SeasonSelector/SeasonSelector";
+import Separator from "@/components/Separator/Separator";
+import { getYearData } from "@/Utils/yearData";
 import React from "react"
-import getTeamEvents from "../../actions/api/get-team-events"
-import { getYearData } from "@/Utils/yearData"
-import Link from "next/link"
-import { School, MapPin } from "lucide-react"
-import YoutubeEmbed from "@/components/YoutubeEmbed/YoutubeEmbed"
-import EventData, { EventType, MatchData } from "@/components/EventData/EventData"
-import getTeamAwards from "@/app/actions/api/get-team-awards"
-import getMatchsResults from "@/app/actions/api/get-matchs-results"
-import Separator from "@/components/Separator/Separator"
-import { getEventWLT } from "@/app/actions/eventScoring"
+import style from "../saisons.module.css"
+import { MapPin, School } from "lucide-react";
+import YouTubeEmbed from "@/components/YoutubeEmbed/YoutubeEmbed";
+import EventData from "@/components/EventData/EventData";
+import { getEventWLT } from "@/app/actions/eventScoring";
+import { getMatchsResults } from "@/app/actions/api/get-matchs-results";
+import Link from "next/link";
 
 export default async function Saisons({
   params,
 }: { 
   params: Promise<{ year: string }>
 }) {
+  let totalWin = 0
+  let totalLose = 0
+  let totalTie = 0
   const { year } = await params;
+  const [yearData, teamEventsCodes] = await Promise.all([
+    getYearData(year),
+    getTeamEvents(year),
+  ]);
+  
 
-  const events: EventType[] = await getTeamEvents({ year });
-  const yearData = await getYearData(year);
-
-  if (!events || !yearData) {
-    return (
-      <>
-        <SeasonSelector year={year}></SeasonSelector>
-        <div className="presentation_container">
-          <h1 className="page-title">Nos Saisons</h1>
-          <h2>Aucune compétition...</h2>
-        </div>
-      </>
-    );
+  for (const event of teamEventsCodes) {
+    const matchsData = await getMatchsResults(event)
+    const record = getEventWLT(matchsData)
+    
+    totalWin += record.win
+    totalLose += record.lose
+    totalTie += record.tie
   }
-
-  let totalWins = 0;
-  let totalLosses = 0;
-  let totalTies = 0;
-
-  const eventResultsPromises = events.map(async (event: EventType) => {
-    const datas = await getMatchsResults({ year, eventCode: event.code });
-    const awards = await getTeamAwards({ year, eventCode: event.code});
-    datas.Matches = datas.Matches.filter((match: MatchData) => match.actualStartTime != null)
-     
-    const eventWLT = getEventWLT(datas.Matches);
-
-    totalWins += eventWLT.win;
-    totalLosses += eventWLT.lose;
-    totalTies += eventWLT.tie;
-
-    return {matches: datas.Matches, award: awards.Awards}
-  });
-
-  const eventsDatas = await Promise.all(eventResultsPromises);
+  
+  if(yearData == undefined) {
+    return
+  }
   
   return (
     <>
@@ -114,16 +99,16 @@ export default async function Saisons({
           </div>
         </div>
         {yearData.revealId != "" ?
-          <YoutubeEmbed videoId={yearData.revealId} />
+          <YouTubeEmbed videoId={yearData.revealId} />
         :
           <></>
         }
         <Separator />
         <div className={style.event_result_container}>
           <h1 className={style.font40}>Résultats d&apos;évènements</h1>
-          <p className={style.font20}>L&apos;équipe a terminé la saison avec {totalWins} victoires, {totalLosses} défaites et {totalTies} égalitées</p>
-          {events.map((event, index: number) => (
-            <EventData key={index} event={event} matchsData={eventsDatas[index].matches} awards={eventsDatas[index].award}/>
+          <p className={style.font20}>L&apos;équipe a terminé la saison avec {totalWin} victoires, {totalLose} défaites et {totalTie} égalitées</p>
+          {teamEventsCodes.map((event: string, index: number) => (
+            <EventData key={index} event_code={event}/>
           ))}
         </div>
         <Separator />

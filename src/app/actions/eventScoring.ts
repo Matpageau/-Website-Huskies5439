@@ -1,19 +1,22 @@
-import { MatchData, Team } from "@/components/EventData/EventData";
+import { Match } from "@/Utils/types/match";
 
-export function getEventWLT(mathchsData: MatchData[]) {
+export function getEventWLT(mathchsData: Match[]) {
+  
   let winCount = 0;
   let loseCount = 0;
   let tieCount = 0;
   
-  mathchsData.forEach(match => {    
-    const alliance = match.teams.find((team: Team) => team.teamNumber == 5439)?.station
-    if (alliance && (alliance.startsWith("Red") !== (match.scoreRedFinal < match.scoreBlueFinal))) {
-      winCount++;
-    } else if (alliance && (alliance.startsWith("Red") !== (match.scoreRedFinal > match.scoreBlueFinal))) {
-      loseCount++;
-    } else {
+  mathchsData.forEach(match => {  
+    const alliance = Object.keys(match.alliances).find(alliance => match.alliances[alliance as "blue" | "red"].team_keys.includes("frc5439"))
+
+    if(alliance == match.winning_alliance) {
+      winCount ++
+    }else if(alliance != match.winning_alliance && match.winning_alliance != null) {
+      loseCount ++
+    }else{
       tieCount ++
     }
+    
   });
   return {win: winCount, lose: loseCount, tie: tieCount}
 }

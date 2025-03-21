@@ -1,42 +1,22 @@
-"use server"
-import axios from "axios";
+export async function getTeamEvents(year: string) {
+  try {   
+    const res = await fetch(`https://www.thebluealliance.com/api/v3/team/frc5439/events/${year}/keys`, {
+      method: 'GET',
+      headers: {
+        'X-TBA-Auth-Key': 'ExMO0gWOUqWU14KvPGkP5m7nAy7GslibiaGrH72NcWbkFtZauH3HXzc3i7sAvxUj',
+      },
+    });
 
-interface GetTeamParams {
-  year: string;
-}
-
-export default async function getTeamEvents({ year }: GetTeamParams) {   
-  const config = {
-    method: 'get',
-    maxBodyLength: Infinity,
-    url: `https://frc-api.firstinspires.org/v3.0/${year}/events?teamNumber=5439`,
-    headers: { 
-      'Authorization': 'Basic bWFsYWRhcml4Ojk3NjNmZWRjLWUwNjAtNDJhYi1hOTBiLWMzZWRmMDJjNjZkZQ=='
+    // Check if the response status is ok
+    if (!res.ok) {
+      throw new Error(`Failed to fetch events, status: ${res.status}`);
     }
-  };
 
-  if(year == "2020") {
-    return [
-      {
-        "code": "QCMO",
-        "name": "Festival de Robotique a Montreal Regional (Annulé)",
-        "city": "Montreal",
-        "stateprov": "QC",
-        "country": "Canada",
-        "dateStart": "2020-04-08T00:00:00",
-        "dateEnd": "2020-04-11T23:59:59",
-        "website": null,
-      }
-    ]
-  }
-  
-  try {
-    const response = await axios.request(config)
-    if(response.data.eventCount > 0) {
-      return response.data.Events
-    }
+    const data = await res.json();
+    return data
+
   } catch (error) {
-    console.error("Une erreure est survenue lors du chargement de l'équipe.", error)
-    return undefined
+    console.error("Error fetching team events:", error);
+    return null
   }
 }
