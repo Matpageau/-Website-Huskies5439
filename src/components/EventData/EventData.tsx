@@ -64,30 +64,30 @@ const EventData: React.FC<EventProp> = async ({ event_code }) => {
   
   return (
     <div className={style.event_container}>
-      <div className={style.event_infos}>
+      <div>
         {event.website ? 
-          <Link className={`${style.font40} ${style.link}`} href={event.website} target="_blank">{event.name}</Link>
+          <Link className={`font40 link`} href={event.website} target="_blank">{event.name}</Link>
         :
-          <p className={`${style.font40} ${style.link}`}>{event.name}</p>
+          <p className={`font40 link`}>{event.name}</p>
         }
         <div className={style.iconText}>
-          <MapPin />
-          <p className={style.font20}>{event.city}, {event.state_prov}, {event.country}</p>
+          <MapPin className='icon'/>
+          <p className="font20">{event.city}, {event.state_prov}, {event.country}</p>
         </div>
         <div className={style.iconText}>
-          <Calendar />
-          <p className={style.font20}>{new Date(event.start_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} au {new Date(event.end_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} {event.end_date.split("-")[0]}</p>
+          <Calendar className='icon'/>
+          <p className="font20">{new Date(event.start_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} au {new Date(event.end_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} {event.end_date.split("-")[0]}</p>
         </div>
         <div className={style.iconText}>
-          <ChartColumn />
-          <p className={style.font20}>{eventWLT.win} vitoire{eventWLT.win > 1 ? "s" : ""} {eventWLT.lose} défaite{eventWLT.lose > 1 ? "s" : ""} {eventWLT.tie} égalitée{eventWLT.tie > 1 ? "s" : ""}</p>
+          <ChartColumn className='icon'/>
+          <p className="font20">{eventWLT.win} vitoire{eventWLT.win > 1 ? "s" : ""} {eventWLT.lose} défaite{eventWLT.lose > 1 ? "s" : ""} {eventWLT.tie} égalitée{eventWLT.tie > 1 ? "s" : ""}</p>
         </div>
         {awards.length > 0 ?
           <div className={style.reward_container}>
-            <h2>Prix remporté{awards.length > 1 ? "s" : ""}</h2>
+            <h2 className='font40'>Prix remporté{awards.length > 1 ? "s" : ""}</h2>
             <ul>
               {awards.map((award: Award, index: number) => (
-                <li key={index}>{award.name}</li>
+                <li key={index} className='font20'>{award.name}</li>
               ))}
             </ul>
           </div>

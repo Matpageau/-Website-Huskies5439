@@ -10,3 +10,27 @@
   text-align: center;
   border-radius: 10px;
 }
+
+@media (max-width: 1400px) {
+  .seasonSelector {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .seasonSelector {
+    margin-top: 20px;
+    max-width: none;
+    position: unset;
+    justify-self: center;
+    width: 50%;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 750px) {
+  .seasonSelector {
+    height: 35px;
+    font-size: 18px;
+  }
+}

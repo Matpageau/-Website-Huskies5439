@@ -4,6 +4,7 @@
   justify-content: center;
   justify-self: center;
   width: 70%;
+  max-width: 1600px;
 }
 
 .game_presentation_container {
@@ -36,11 +37,7 @@
   border-radius: 20px;
 }
 
-.left_infos {
-  width: 60%;
-}
-
-.test {
+.robotImage {
   display: flex;
   flex-direction: column;
   justify-content: right;
@@ -86,30 +83,82 @@
   flex-direction: row;
   margin-top: 5px;
   gap: 5px;
-  font-size: 20px;
 }
 
-.font64 {
-  font-size: 64px;
+@media (max-width: 1400px ) {
+  .team_logo {
+    max-height: 70px;
+  }
+
+  .iconText {
+    margin-top: 5px;
+  }
+
+  .team_location_container {
+    margin-top: 0px;
+  }
+
+  .robot_caracteristic_container {
+    margin-top: 15px;
+  }
+
+  .robot_container {
+    height: 275px;
+  }
 }
 
-.font40 {
-  font-size: 40px;
+@media (max-width: 1000px) {
+  .team_logo {
+    max-height: 55px;
+  }
+
+  .team_profile {
+    height: 55px;
+  }
+
+  .robot_container {
+    height: 240px;
+  }
 }
 
-.font20 {
-  font-size: 20px;
-}
+@media (max-width: 750px) {
+  .content {
+    width: 80%;
+  }
+ .game_presentation_container {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  
+  .game_logo {
+    width: 100%;
+  }
 
-.semi_bold {
-  font-weight: 600;
-}
+  .team_logo {
+    max-height: 40px;
+  }
 
-.link {
-  font-size: 20px;
-  color: var(--blue);
-}
+  .team_profile {
+    height: 40px;
+  }
 
-.link:hover {
-  text-decoration: underline;
+  .teamNameTBA {
+    margin-left: 5px;
+    top: -1px;
+  }
+
+  .robot_container {
+    flex-direction: column;
+    height: fit-content;
+    gap: 10px;
+  }
+
+  .robotImage {
+    width: 100%;
+  }
+
+  .iconText {
+    margin-top: 3px;
+    gap: 2px;
+  }
 }

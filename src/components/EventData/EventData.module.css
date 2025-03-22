@@ -1,16 +1,11 @@
 .event_container {
   display: flex;
   margin-top: 35px;
-}
-
-.event_infos {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
+  gap: 10px;
 }
 
 .event_stats {
-  width: 60%;
+  width: 70%;
 }
 
 .iconText {
@@ -18,29 +13,28 @@
   flex-direction: row;
   margin-top: 5px;
   gap: 5px;
-  font-size: 20px;
 }
 
 .reward_container {
   margin-top: 50px;
 }
 
-.font64 {
-  font-size: 64px;
-}
+@media (max-width: 750px) {
+  .event_container {
+    margin-top: 20px;
+    flex-direction: column;
+  }
 
-.font40 {
-  font-size: 40px;
-}
+  .event_stats {
+    width: 100%;
+  }
 
-.font20 {
-  font-size: 20px;
-}
+  .iconText {
+    margin-top: 3px;
+    gap: 2px;
+  }
 
-.link {
-  color: var(--blue);
-}
-
-.link:hover {
-  text-decoration: underline;
+  .reward_container {
+    margin-top: 10px;
+  }
 }
