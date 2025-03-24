@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from 'next/link';
-import style from './Navbar.module.css';
+import './Navbar.css';
 import { useEffect, useRef, useState } from "react";
 import { AlignJustify } from "lucide-react";
 
@@ -48,14 +48,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={style.navbar}>
-        <Image className={style.topleft_logo} src="/images/huskies_logo.jpg" alt="Logo.jpg" width={60} height={60} />
-        <div className={style.hamburger} onClick={() => setOpen(!isOpen)} ref={buttonRef}>
+      <nav className="navbar">
+        <Image className="topleft_logo" src="/images/huskies_logo.jpg" alt="Logo.jpg" width={60} height={60} />
+        <div className="hamburger" onClick={() => setOpen(!isOpen)} ref={buttonRef}>
           <AlignJustify height={30} width={30} />
         </div>
-        <div className={style.navbar_btnContainer_ls}>
+        <div className="navbar_btnContainer_ls">
           {menuLinks.map((link) => (
-            <div key={link.href} className={style.nav_btn}>
+            <div key={link.href} className="nav_btn">
               <Link className="font26" href={link.href}>
                 {link.label}
               </Link>
@@ -64,9 +64,9 @@ const Navbar = () => {
         </div>
       </nav>
     
-      <div className={`${style.navbar_btnContainer_ss} ${isOpen ? style.visible : style.hidden} ${noTransition ? style.no_transition : ""}`}>
+      <div className={`navbar_btnContainer_ss ${isOpen ? "visible" : "hidden"} ${noTransition ? "no_transition" : ""}`}>
         {menuLinks.map((link) => (
-          <div key={link.href} className={style.nav_btn}>
+          <div key={link.href} className="nav_btn">
             <Link className="font26" href={link.href} onClick={handleLinkClick}>
               {link.label}
             </Link>

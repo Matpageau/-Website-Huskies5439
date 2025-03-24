@@ -4,7 +4,7 @@ import SeasonSelector from "@/components/SeasonSelector/SeasonSelector";
 import Separator from "@/components/Separator/Separator";
 import { getYearData } from "@/Utils/yearData";
 import React, { Suspense } from "react"
-import style from "./saisons.module.css"
+import "./saisons.css"
 import { MapPin, School } from "lucide-react";
 import YouTubeEmbed from "@/components/YoutubeEmbed/YoutubeEmbed";
 import EventData from "@/components/EventData/EventData";
@@ -37,7 +37,15 @@ export default async function Saisons({
   }
   
   if(yearData == undefined) {
-    return
+    return (
+      <>
+        <div className="presentation_container">
+          <h1 className="page-title">Nos Saisons</h1>
+        </div>
+        <SeasonSelector year={year}></SeasonSelector>
+        <h1 className="font64">Saison invalide...</h1>
+      </>
+    )
   }
   
   return (
@@ -46,41 +54,41 @@ export default async function Saisons({
         <h1 className="page-title">Nos Saisons</h1>
       </div>
       <SeasonSelector year={year}></SeasonSelector>
-      <div className={style.content}>
-        <div className={style.game_presentation_container}>
-          <img className={style.game_logo} src={yearData.gameLogo} alt="gameLogo" />
+      <div className="content">
+        <div className="game_presentation_container">
+          <img className="game_logo" src={yearData.gameLogo} alt="gameLogo" />
           <div>
             <h1 className="font64">{yearData.gameName.toUpperCase()}</h1>
-            <p className={`font20 semi_bold`}>{yearData.gameDescription}</p>
+            <p className="font20 semi_bold">{yearData.gameDescription}</p>
           </div>
         </div>
         <Separator />
-        <div className={style.robot_container}>
+        <div className="robot_container">
           <div>
-            <div className={style.team_infos_container}>
-              <div className={style.team_profile}>
+            <div className="team_infos_container">
+              <div className="team_profile">
                 {yearData.teamAvatar != "" ? 
-                  <img src={"data:image/png;base64," + yearData.teamAvatar} className={style.team_logo} alt="avatar huskies" />
+                  <img src={"data:image/png;base64," + yearData.teamAvatar} className="team_logo" alt="avatar huskies" />
                   : 
                    <></>
                 }
-                <div className={style.teamNameTBA}>
+                <div className="teamNameTBA">
                   <h1 className="font64">Huskies 5439</h1>
                   <Link href={`https://thebluealliance.com/team/5439/${year}`} className="link" target="_blank">thebluealliance.com</Link>
                 </div>
               </div>
-              <div className={style.team_location_container}>
-                <div className={`${style.iconText} font20`}>
+              <div className="team_location_container">
+                <div className="iconText font20">
                   <School className="icon"/>
                   <p>Polyvalente de Charlesbourg</p>
                 </div>
-                <div className={`${style.iconText} font20`}>
+                <div className="iconText font20">
                   <MapPin className="icon"/>
                   <p>Québec, Québec, Canada</p>
                 </div>
               </div>
             </div>
-            <div className={style.robot_caracteristic_container}>
+            <div className="robot_caracteristic_container">
               <h1 className="font40">Caractéristiques du robot</h1>
               <ul>
                 {yearData.robotAttribut.map((attribute, index) => (
@@ -89,10 +97,10 @@ export default async function Saisons({
               </ul>
             </div>
           </div>
-          <div className={style.robotImage}>
-            <img src={yearData.robotImage} className={style.robotImage} alt={year + "robot"} />
+          <div className="robotImage">
+            <img src={yearData.robotImage} className="robotImage" alt={year + "robot"} />
             {yearData.robotName != "" ? 
-              <h4 className={`font20 ${style.robotName}`}>Nom du robot: {yearData.robotName}</h4>
+              <h4 className="font20 robotName">Nom du robot: {yearData.robotName}</h4>
               :
               <></>
             }
@@ -104,7 +112,7 @@ export default async function Saisons({
           <></>
         }
         <Separator />
-        <div className={style.event_result_container}>
+        <div className="event_result_container">
           <h1 className="font40">Résultats d&apos;évènements</h1>
           <p className="font20">L&apos;équipe a terminé la saison avec {totalWin} victoires, {totalLose} défaites et {totalTie} égalitées</p>
           <Suspense fallback={<p>Chargement des compétitons...</p>}>
@@ -115,7 +123,7 @@ export default async function Saisons({
         </div>
         <Separator />
         {yearData.githubLink != "" || yearData.cadLink != "" ?
-          <div className={style.ressources_container}>
+          <div className="ressources_container">
             <h1 className="font40">Ressources</h1>
             {yearData.githubLink != "" ? 
               <Link className="link font20" href={yearData.githubLink} target="_blank">Github</Link>

@@ -55,10 +55,9 @@ a {
 }
 
 .page-title {
-  margin-top: 35px;
   font-size: 146px;
   color: var(--blue);
-  text-shadow: 0px 4px 250px var(--blue);
+  text-shadow: 0px 4px 200px var(--blue);
 }
 
 .presentation_container {
@@ -161,6 +160,12 @@ a {
   .icon {
     height: 12px;
     width: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    margin-top: 35px;
   }
 }
 

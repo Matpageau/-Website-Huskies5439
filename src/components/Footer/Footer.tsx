@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import style from "./Footer.module.css"
+import "./Footer.css"
 import Toggle from '../Toggle/Toggle'
 
 interface FooterProps {
@@ -20,7 +20,7 @@ const Footer = ({ initialTheme }: FooterProps) => {
   }, [theme])
   
   return (
-    <footer className={style.footer}>
+    <footer className="footer">
       <Toggle handleChange={toggleTheme} isChecked={theme}/>
     </footer>
   )

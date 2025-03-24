@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import style from "./EventData.module.css";
+import "./EventData.css";
 import Link from 'next/link';
 import { Calendar, ChartColumn, MapPin } from "lucide-react";
 import { getEventWLT } from '@/app/actions/eventScoring';
@@ -63,27 +63,27 @@ const EventData: React.FC<EventProp> = async ({ event_code }) => {
   });
   
   return (
-    <div className={style.event_container}>
-      <div className={style.compInfos_container}>
+    <div className="event_container">
+      <div className="compInfos_container">
         {event.website ? 
           <Link className={`font40 link`} href={event.website} target="_blank">{event.name}</Link>
         :
           <p className={`font40 link`}>{event.name}</p>
         }
-        <div className={style.iconText}>
+        <div className="iconText">
           <MapPin className='icon'/>
           <p className="font20">{event.city}, {event.state_prov}, {event.country}</p>
         </div>
-        <div className={style.iconText}>
+        <div className="iconText">
           <Calendar className='icon'/>
           <p className="font20">{new Date(event.start_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} au {new Date(event.end_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} {event.end_date.split("-")[0]}</p>
         </div>
-        <div className={style.iconText}>
+        <div className="iconText">
           <ChartColumn className='icon'/>
           <p className="font20">{eventWLT.win} vitoire{eventWLT.win > 1 ? "s" : ""} {eventWLT.lose} défaite{eventWLT.lose > 1 ? "s" : ""} {eventWLT.tie} égalitée{eventWLT.tie > 1 ? "s" : ""}</p>
         </div>
         {awards.length > 0 ?
-          <div className={style.reward_container}>
+          <div className="reward_container">
             <h2 className='font40'>Prix remporté{awards.length > 1 ? "s" : ""}</h2>
             <ul>
               {awards.map((award: Award, index: number) => (
@@ -96,7 +96,7 @@ const EventData: React.FC<EventProp> = async ({ event_code }) => {
         }
       </div>
       {sortedMatchData.length > 0 ?
-        <div className={style.event_stats}>
+        <div className="event_stats">
           <Suspense fallback={<p>Chargement des statistiques...</p>}>
             <EventStatsBoard matchsDatas={sortedMatchData} event_code={event_code}/>
           </Suspense>

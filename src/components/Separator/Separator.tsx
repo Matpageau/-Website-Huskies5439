@@ -1,9 +1,9 @@
 import React from 'react'
-import style from "./Separator.module.css"
+import "./Separator.css"
 
 const Separator = () => {
   return (
-    <div className={style.separator}></div>
+    <div className="separator"></div>
   )
 }
 

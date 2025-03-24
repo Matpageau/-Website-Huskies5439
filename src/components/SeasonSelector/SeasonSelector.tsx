@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-import style from "./SeasonSelector.module.css"
+import "./SeasonSelector.css"
 
 interface SeasonSelectorProps {
   year: string;
@@ -18,7 +18,7 @@ const SeasonSelector: React.FC<SeasonSelectorProps> = ({ year }) => {
   }, [season, year, router])
   
   return (
-    <select className={`font20 ${style.seasonSelector}`} id="seasonSelector" onChange={(e) => setSeason(e.target.value)} value={season}>
+    <select className="font20 seasonSelector" id="seasonSelector" onChange={(e) => setSeason(e.target.value)} value={season}>
       <option value="2025">Saison 2025</option>
       <option value="2024">Saison 2024</option>
       <option value="2023">Saison 2023</option>

@@ -39,9 +39,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${inter.variable}`} data-theme={initialTheme}>
-        <Navbar initialTheme={initialTheme} />
+        <Navbar/>
         <div className="main-container">{children}</div>
-        <Footer />
+        <Footer initialTheme={initialTheme}/>
       </body>
     </html>
   );
