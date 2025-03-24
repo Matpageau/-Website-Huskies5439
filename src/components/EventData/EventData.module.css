@@ -4,8 +4,12 @@
   gap: 10px;
 }
 
+.compInfos_container {
+  width: 40%;
+}
+
 .event_stats {
-  width: 70%;
+  width: 60%;
 }
 
 .iconText {

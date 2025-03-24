@@ -1,5 +1,11 @@
 :root {
   --blue: #0953BF;
+  --black-background: #080808;
+  --board-color: white;
+  --board-red-color: rgb(119, 42, 42);
+  --board-blue-color: rgb(45, 45, 90);
+  --link-color: #4988e7;
+  --background-color: white;
 }
 
 html,
@@ -10,9 +16,25 @@ body {
 
 body {
   font-family: var(--font-inter-sans), sans-serif;
-  color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body[data-theme="dark"] {
+  background-color: var(--black-background);
+  --background-color: var(--black-background);
+  color: rgb(255, 255, 255);
+  --board-color: rgb(17, 17, 17);
+  --blue: var(--link-color)
+}
+
+body[data-theme="light"] {
+  background-color: white;
+  --background-color: white;
+  color: black; 
+  --board-color: white;
+  --board-red-color: rgb(255, 221, 221);
+  --board-blue-color: rgb(238, 238, 255);
 }
 
 * {
@@ -21,7 +43,7 @@ body {
 }
 
 a {
-  color: #000000;
+  color: currentColor;
   text-decoration: none;
 }
 
@@ -36,6 +58,7 @@ a {
   margin-top: 35px;
   font-size: 146px;
   color: var(--blue);
+  text-shadow: 0px 4px 250px var(--blue);
 }
 
 .presentation_container {
@@ -56,6 +79,10 @@ a {
 
 .font40 {
   font-size: 40px;
+}
+
+.font26 {
+  font-size: 26px;
 }
 
 .font20 {
@@ -99,6 +126,10 @@ a {
 }
 
 @media (max-width: 1400px) {
+  .presentation_container {
+    margin-top: 55px;
+  }
+  
   .Loading-text {
     font-size: 60px;
   }
@@ -113,6 +144,10 @@ a {
 
   .font40 {
     font-size: 20px;
+  }
+
+  .font26 {
+    font-size: 22px;
   }
 
   .font20 {
@@ -136,6 +171,10 @@ a {
 
   .font64 {
     font-size: 32px;
+  }
+
+  .font26 {
+    font-size: 16px;
   }
 
   .font40 {

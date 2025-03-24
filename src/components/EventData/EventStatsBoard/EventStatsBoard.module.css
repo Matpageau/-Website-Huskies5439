@@ -12,7 +12,7 @@
 }
 
 .table th {
-  background-color: #f4f4f4;
+  background-color: var(--board-color);
 }
 
 .hideOnSmall {
@@ -20,11 +20,15 @@
 }
 
 .redAlliance {
-  background-color: rgb(255, 221, 221);
+  background-color: var(--board-red-color);
 }
 
 .blueAlliance {
-  background-color: rgb(238, 238, 255);
+  background-color: var(--board-blue-color)
+}
+
+.video {
+  stroke: var(--blue);
 }
 
 .winner {

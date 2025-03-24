@@ -9,10 +9,19 @@
   font-family: var(--font-inter-sans), sans-serif;
   text-align: center;
   border-radius: 10px;
+  background-color: inherit;
+  color: inherit;
+  outline: none;
+}
+
+.seasonSelector option {
+  background-color: inherit;
+  color: black;
 }
 
 @media (max-width: 1400px) {
   .seasonSelector {
+    top: 155px;
     font-size: 16px;
   }
 }

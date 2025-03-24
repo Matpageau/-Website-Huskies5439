@@ -32,14 +32,14 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
     <table className={style.table}>
       <thead>
         <tr className={style.visible_lg}>
-          <th><CirclePlay color='Blue' height={15} className='icon'/></th>
+          <th><CirclePlay color='Blue' height={15} className={`icon ${style.video}`}/></th>
           <th className="font20">Match</th>
           <th colSpan={3} className="font20">Alliance Rouge</th>
           <th colSpan={3} className="font20">Alliance Bleu</th>
           <th colSpan={2} className="font20">Scores</th>
         </tr>
         <tr className={style.hidden_lg}>
-          <th rowSpan={2}><CirclePlay color='Blue' height={15} className='icon'/></th>
+          <th rowSpan={2}><CirclePlay height={15} className={`icon ${style.video}`}/></th>
           <th rowSpan={2} className="font20">Match</th>
           <th colSpan={6} className="font20">Alliance Rouge</th>
           <th colSpan={2} className="font20">Score Rouge</th>
@@ -75,7 +75,7 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
               </tr>
             )}
             <tr className={style.visible_lg}>
-              <td>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay color='Blue' height={15} className='icon'/></Link> : <></>}</td>
+              <td>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay height={15} className={`icon ${style.video}`}/></Link> : <></>}</td>
               <td className={`font16`}>{getMatchLabel(match.comp_level, match.match_number, match.set_number)}</td>
 
               {match.alliances.red.team_keys.map((team: string) => (
@@ -90,7 +90,7 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
               <td className={`font16 ${style.blueAlliance} ${match.winning_alliance == "blue" ? style.winner : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? style.currentTeam : ""}`}>{match.score_breakdown.blue.totalPoints}</td>
             </tr>
             <tr className={style.hidden_lg}>
-              <td rowSpan={2}>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay color='Blue' height={15} className='icon'/></Link> : <></>}</td>
+              <td rowSpan={2}>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay color='Blue' height={15} className={`icon ${style.video}`}/></Link> : <></>}</td>
               <td rowSpan={2} className={`font16`}>{getMatchLabel(match.comp_level, match.match_number, match.set_number)}</td>
 
               {match.alliances.red.team_keys.map((team: string) => (

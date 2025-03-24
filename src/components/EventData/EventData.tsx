@@ -64,7 +64,7 @@ const EventData: React.FC<EventProp> = async ({ event_code }) => {
   
   return (
     <div className={style.event_container}>
-      <div>
+      <div className={style.compInfos_container}>
         {event.website ? 
           <Link className={`font40 link`} href={event.website} target="_blank">{event.name}</Link>
         :
