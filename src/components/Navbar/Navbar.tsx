@@ -49,11 +49,11 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <Image className="topleft_logo" src="/images/huskies_logo.jpg" alt="Logo.jpg" width={60} height={60} />
+        <Image className="topleft_logo ss-hidden" src="/images/huskies_logo.jpg" alt="Logo.jpg" width={60} height={60} />
         <div className="hamburger" onClick={() => setOpen(!isOpen)} ref={buttonRef}>
           <AlignJustify height={30} width={30} />
         </div>
-        <div className="navbar_btnContainer_ls">
+        <div className="navbar_btnContainer_ls ss-hidden">
           {menuLinks.map((link) => (
             <div key={link.href} className="nav_btn">
               <Link className="font26" href={link.href}>

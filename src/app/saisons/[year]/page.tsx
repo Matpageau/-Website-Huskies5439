@@ -39,7 +39,7 @@ export default async function Saisons({
   if(yearData == undefined) {
     return (
       <>
-        <div className="presentation_container">
+        <div className="presentation-container">
           <h1 className="page-title">Nos Saisons</h1>
         </div>
         <SeasonSelector year={year}></SeasonSelector>
@@ -50,25 +50,25 @@ export default async function Saisons({
   
   return (
     <>
-      <div className="presentation_container">
+      <div className="presentation-container">
         <h1 className="page-title">Nos Saisons</h1>
       </div>
       <SeasonSelector year={year}></SeasonSelector>
       <div className="content">
-        <div className="game_presentation_container">
-          <img className="game_logo" src={yearData.gameLogo} alt="gameLogo" />
+        <div className="game-presentation-container flex-row">
+          <img className="game-logo" src={yearData.gameLogo} alt="gameLogo" />
           <div>
             <h1 className="font64">{yearData.gameName.toUpperCase()}</h1>
-            <p className="font20 semi_bold">{yearData.gameDescription}</p>
+            <p className="font20 semi-bold">{yearData.gameDescription}</p>
           </div>
         </div>
         <Separator />
-        <div className="robot_container">
+        <div className="robot-container flex-row">
           <div>
-            <div className="team_infos_container">
-              <div className="team_profile">
+            <div className="team-infos-container">
+              <div className="team-profile flex-row">
                 {yearData.teamAvatar != "" ? 
-                  <img src={"data:image/png;base64," + yearData.teamAvatar} className="team_logo" alt="avatar huskies" />
+                  <img src={"data:image/png;base64," + yearData.teamAvatar} className="team-logo" alt="avatar huskies" />
                   : 
                    <></>
                 }
@@ -77,8 +77,8 @@ export default async function Saisons({
                   <Link href={`https://thebluealliance.com/team/5439/${year}`} className="link" target="_blank">thebluealliance.com</Link>
                 </div>
               </div>
-              <div className="team_location_container">
-                <div className="iconText font20">
+              <div className="team-location-container">
+                <div className="iconText font20 flex-row">
                   <School className="icon"/>
                   <p>Polyvalente de Charlesbourg</p>
                 </div>
@@ -88,7 +88,7 @@ export default async function Saisons({
                 </div>
               </div>
             </div>
-            <div className="robot_caracteristic_container">
+            <div className="robot-caracteristic-container">
               <h1 className="font40">Caractéristiques du robot</h1>
               <ul>
                 {yearData.robotAttribut.map((attribute, index) => (
@@ -97,7 +97,7 @@ export default async function Saisons({
               </ul>
             </div>
           </div>
-          <div className="robotImage">
+          <div className="robotImage-container flex-col">
             <img src={yearData.robotImage} className="robotImage" alt={year + "robot"} />
             {yearData.robotName != "" ? 
               <h4 className="font20 robotName">Nom du robot: {yearData.robotName}</h4>
@@ -112,7 +112,7 @@ export default async function Saisons({
           <></>
         }
         <Separator />
-        <div className="event_result_container">
+        <div className="event-result-container">
           <h1 className="font40">Résultats d&apos;évènements</h1>
           <p className="font20">L&apos;équipe a terminé la saison avec {totalWin} victoires, {totalLose} défaites et {totalTie} égalitées</p>
           <Suspense fallback={<p>Chargement des compétitons...</p>}>
@@ -123,7 +123,7 @@ export default async function Saisons({
         </div>
         <Separator />
         {yearData.githubLink != "" || yearData.cadLink != "" ?
-          <div className="ressources_container">
+          <div className="flex-col">
             <h1 className="font40">Ressources</h1>
             {yearData.githubLink != "" ? 
               <Link className="link font20" href={yearData.githubLink} target="_blank">Github</Link>

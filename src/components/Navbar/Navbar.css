@@ -59,11 +59,7 @@
   transition: none !important;
 }
 
-@media (max-width: 1200px) {
-  .topleft_logo {
-    display: none;
-  }
-  
+@media (max-width: 1200px) {  
   .hamburger {
     display: initial;
   }
@@ -71,10 +67,6 @@
   .navbar {
     position: fixed;
     width: 100%;
-  }
-
-  .navbar_btnContainer_ls {
-    display: none;
   }
 
   .nav_btn {

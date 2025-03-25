@@ -15,10 +15,6 @@
   background-color: var(--board-color);
 }
 
-.hideOnSmall {
-  display: table-row;
-}
-
 .redAlliance {
   background-color: var(--board-red-color);
 }
@@ -29,10 +25,6 @@
 
 .video {
   stroke: var(--blue);
-}
-
-.winner {
-  font-weight: 700;
 }
 
 .currentTeam {
@@ -49,11 +41,7 @@
   }
 }
 
-@media (max-width: 1000px) {
-  .visible_lg {
-    display: none;
-  }
-
+@media (max-width: 1200px) {
   .hidden_lg {
     display: table-row;
   }

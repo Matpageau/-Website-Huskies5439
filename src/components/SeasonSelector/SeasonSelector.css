@@ -5,7 +5,7 @@
   width: 13%;
   max-width: 350px;
   height: 50px;
-  font-size: 24px;
+  font-size: inherit;
   font-family: var(--font-inter-sans), sans-serif;
   text-align: center;
   border-radius: 10px;
@@ -22,7 +22,6 @@
 @media (max-width: 1400px) {
   .seasonSelector {
     top: 175px;
-    font-size: 16px;
   }
 }
 
@@ -39,13 +38,11 @@
     position: unset;
     justify-self: center;
     width: 50%;
-    font-size: 24px;
   }
 }
 
 @media (max-width: 750px) {
   .seasonSelector {
     height: 35px;
-    font-size: 18px;
   }
 }

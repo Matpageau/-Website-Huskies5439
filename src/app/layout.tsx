@@ -1,7 +1,7 @@
 // root-layout.tsx
+import "./globals.css";
 import { cookies } from "next/headers"; // Import cookies for SSR
 import type { Metadata } from "next";
-import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
