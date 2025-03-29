@@ -86,8 +86,8 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
                 <td key={team} className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
               ))}
 
-              <td className={`font16 redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${match.alliances.red.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints}</td>
-              <td className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.blue.totalPoints}</td>
+              <td className={`font16 redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${match.alliances.red.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints ? match.score_breakdown.red.totalPoints : match.score_breakdown.red.total_points}</td>
+              <td className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints ? match.score_breakdown.blue.totalPoints : match.score_breakdown.blue.total_points}</td>
             </tr>
             <tr className="hidden_lg">
               <td rowSpan={2}>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay color='Blue' height={15} className="icon video"/></Link> : <></>}</td>

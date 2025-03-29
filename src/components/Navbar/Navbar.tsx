@@ -14,7 +14,7 @@ const Navbar = () => {
     { href: "/", label: "Accueil" },
     { href: "/equipe", label: "Équipe" },
     { href: "/saisons/2025", label: "Nos saisons" },
-    { href: "/medias", label: "Médias" },
+    { href: "/medias/2025", label: "Médias" },
     { href: "/commenditaires", label: "Nos commenditaires" },
     { href: "/nous_joindre", label: "Nous joindre" },
   ];

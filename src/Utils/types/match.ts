@@ -15,9 +15,11 @@ export type Match = {
   winning_alliance: string
   score_breakdown: {
     blue: {
+      total_points: number
       totalPoints: number
     }
     red: {
+      total_points: number
       totalPoints: number
     }
   }

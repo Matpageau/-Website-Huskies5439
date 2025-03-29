@@ -72,6 +72,11 @@ a {
   color: var(--blue);
 }
 
+.content {
+  width: 75%;
+  max-width: 1600px;
+}
+
 .font64 {
   font-size: 64px;
 }

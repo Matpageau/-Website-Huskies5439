@@ -1,0 +1,13 @@
+.photo-gallery-container {
+  column-count: 3;
+  width: 100%;
+  font-size: 16;
+}
+
+.galery-photo {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}

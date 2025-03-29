@@ -13,7 +13,7 @@ const SeasonSelector: React.FC<SeasonSelectorProps> = ({ year }) => {
 
   useEffect(() => {
     if(season !== year) {
-      router.push(`/saisons/${season}`)
+      router.push(season)
     }
   }, [season, year, router])
   
