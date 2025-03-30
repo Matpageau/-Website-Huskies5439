@@ -13,6 +13,7 @@ export default async function Medias({
   
   return (
     <>
+      <meta name="description" content="Photos Huskies 5439"/>
       <div className="presentation-container">
         <h1 className="page-title">Médias</h1>
       </div>
@@ -20,7 +21,7 @@ export default async function Medias({
       <div className="content">
         <div className="photo-gallery-container">
           {photos.map((photo, index) => (
-            <Image className="galery-photo" key={index} src={photo} alt={`Photo ${index}`} width={1000} height={1000}></Image>
+            <Image className="galery-photo" key={index} src={photo} alt={`Photo ${index}`} width={500} height={500}></Image>
           ))}
         </div>
       </div>

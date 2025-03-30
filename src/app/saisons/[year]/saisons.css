@@ -1,5 +1,4 @@
 .game-presentation-container {
-  margin-top: 35px;
   width: 100%;
   gap: 10px;
 }
@@ -37,9 +36,8 @@
 }
 
 .team-logo {
-  height: 100%;
+  height: 83px;
   width: auto;
-  max-height: 83px;
 }
 
 .teamNameTBA {
