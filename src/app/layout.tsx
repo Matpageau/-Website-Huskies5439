@@ -21,17 +21,17 @@ type RootLayoutProps = {
   children: ReactNode;
 };
 
-// Async function to get the initial theme based on cookies
+
 const getInitialTheme = async () => {
-  const cookieStore = cookies(); // Read cookies server-side
-  const themeCookie = (await cookieStore).get("theme"); // Access the cookie asynchronously
-  return themeCookie?.value === "dark" ? "dark" : "light"; // Default to light if no cookie is set
+  const cookieStore = cookies();
+  const themeCookie = (await cookieStore).get("theme");
+  return themeCookie?.value === "dark" ? "dark" : "light";
 };
 
 
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-  const initialTheme = await getInitialTheme(); // Await the theme during SSR
+  const initialTheme = await getInitialTheme();
 
   return (
     <html lang="en" suppressHydrationWarning>
