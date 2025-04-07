@@ -1,4 +1,4 @@
-import teamYearsData from '@/data/teamYearsData.json'
+import teamYearsData from '../data/teamYearsdata.json'
 
 export interface YearData {
   year: string;
