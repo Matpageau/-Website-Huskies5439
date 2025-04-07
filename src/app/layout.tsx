@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // root-layout.tsx
 import "./globals.css";
 import { cookies } from "next/headers"; // Import cookies for SSR
@@ -6,6 +7,8 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({
   variable: "--font-inter-sans",
@@ -41,6 +44,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <body className={`${inter.variable}`} data-theme={initialTheme}>
         <Navbar/>
         <div className="main-container">{children}</div>
+        <Analytics />
+        <SpeedInsights />
         <Footer initialTheme={initialTheme}/>
       </body>
     </html>
