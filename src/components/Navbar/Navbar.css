@@ -1,8 +1,10 @@
 .navbar {
-  margin-top: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   display: flex;
-  justify-content: center;
   z-index: 101;
+  width: 100%;
 }
 
 .navbar_btnContainer_ls {
@@ -13,27 +15,31 @@
 }
 
 .navbar_btnContainer_ss {
-  display: none;
   position: fixed;
-  background-color: inherit;
+  top: 20px;
+  left: 0;
   width: 100%;
+  display: none;
+  background-color: inherit;
   z-index: 100;
   flex-direction: column;
   gap: 10px;
   box-shadow: 0px 4px 25px 50px var(--background-color);
+  transition: max-height 0.3s ease-in-out, visibility 0s 0.3s;
 }
 
 .hamburger {
   display: none;
-  position: fixed;
+  cursor: pointer;
   top: 37px;
   left: 20px;
-  z-index: 1;
+  z-index: 102;
 }
 
 .nav_btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-wrap: nowrap;
 }
 
@@ -41,32 +47,37 @@
   padding: 10px;
 }
 
-.hidden {
-  visibility: hidden;
-  max-height: 0;
+.visible {
+  display: flex; /* force it to show */
+  visibility: visible;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out, visibility 0s 0.3s;
+  max-height: 500px;
+  transition: max-height 0.3s ease-in-out, visibility 0s;
 }
 
-.visible {
-  visibility: visible;
-  max-height: 500px;
+.hidden {
+  display: none;
+  visibility: hidden;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out, visibility 0s;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out, visibility 0s 0.3s;
 }
 
 .no_transition {
   transition: none !important;
 }
 
+.fixed {
+  position: fixed;
+}
+
 @media (max-width: 1200px) {  
+  .navbar {
+    width: fit-content;
+  }
+  
   .hamburger {
     display: initial;
-  }
-
-  .navbar {
-    position: fixed;
-    width: 100%;
   }
 
   .nav_btn {

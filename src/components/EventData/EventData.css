@@ -29,6 +29,10 @@
     flex-direction: column;
   }
 
+  .compInfos_container {
+    width: 100%;
+  }
+
   .event_stats {
     width: 100%;
   }

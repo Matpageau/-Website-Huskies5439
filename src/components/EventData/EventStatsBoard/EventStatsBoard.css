@@ -49,6 +49,6 @@
 
 @media (max-width: 750px) {
   .table th, .table td {
-    padding: 4px 6px;
+    padding: 4px;
   }
 }

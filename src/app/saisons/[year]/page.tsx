@@ -123,7 +123,7 @@ export default async function Saisons({
         </div>
         <Separator />
         {yearData.githubLink != "" || yearData.cadLink != "" ?
-          <div className="flex-col">
+          <div className="flex-col ressource-container">
             <h1 className="font40">Ressources</h1>
             {yearData.githubLink != "" ? 
               <Link className="link font20" href={yearData.githubLink} target="_blank">Github</Link>

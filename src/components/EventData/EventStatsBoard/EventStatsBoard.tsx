@@ -32,7 +32,7 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
     <table className="table">
       <thead>
         <tr className="ss-hidden">
-          <th><CirclePlay color='Blue' height={15} className="icon video"/></th>
+          <th><CirclePlay height={15} className="icon"/></th>
           <th className="font20">Match</th>
           <th colSpan={3} className="font20">Alliance Rouge</th>
           <th colSpan={3} className="font20">Alliance Bleu</th>

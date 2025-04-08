@@ -28,11 +28,6 @@
 @media (max-width: 1200px) {
   .seasonSelector {
     top: 130px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .seasonSelector {
     margin-top: 20px;
     max-width: none;
     position: unset;

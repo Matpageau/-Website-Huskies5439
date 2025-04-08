@@ -46,9 +46,20 @@ const Navbar = () => {
     };
   });
 
+  useEffect(() => {
+    const handleResize = () => {
+      if(window.innerWidth > 1200 && isOpen) {
+        setOpen(false)
+      }
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [isOpen])
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${isOpen ? "fixed" : ""}`}>
         <Image className="topleft_logo ss-hidden" src="/images/huskies_logo.jpg" alt="Logo.jpg" width={60} height={60} />
         <div className="hamburger" onClick={() => setOpen(!isOpen)} ref={buttonRef}>
           <AlignJustify height={30} width={30} />
@@ -64,7 +75,7 @@ const Navbar = () => {
         </div>
       </nav>
     
-      <div className={`navbar_btnContainer_ss ${isOpen ? "visible" : "hidden"} ${noTransition ? "no_transition" : ""}`}>
+      <div className={`navbar_btnContainer_ss ${isOpen ? "visible fixed" : "hidden"} ${noTransition ? "no_transition" : ""}`}>
         {menuLinks.map((link) => (
           <div key={link.href} className="nav_btn">
             <Link className="font26" href={link.href} onClick={handleLinkClick}>
