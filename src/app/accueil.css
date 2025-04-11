@@ -10,8 +10,9 @@
   display: flex;
   background-color: var(--blue);
   margin-top: 35px;
-  height: 400px;
+  height: 300px;
   width: 60%;
+  min-width: 700px;
   align-items: center;
 }
 
@@ -27,12 +28,44 @@
 }
 
 .presentation-picture {
+  margin: 0px 25px;
   height: 90%;
-  margin: 40px;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .presentation-text {
   color: white;
-  margin: 40px;
+  font-size: 20px;
+}
+
+.pad-right {
+  padding-right: 20px;
+}
+
+.pad-left {
+  padding-left: 20px;
+}
+
+@media (max-width: 1200px) {
+  .presentation-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 750px) {
+  .presentation-box {
+    justify-self: center;
+    height: 150px;
+    width: 80%;
+    min-width: 350px;
+  }
+  
+  .presentation-picture {
+    margin: 0px 10px;
+    border-radius: 10px;
+  }
+
+  .presentation-text {
+    font-size: 10px;
+  }
 }

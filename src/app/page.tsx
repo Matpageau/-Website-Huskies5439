@@ -10,14 +10,14 @@ export default async function Home() {
       </div>
       <div className="left-box presentation-box">
         <img className="presentation-picture" src="/images/robotStation.jpg" alt="Robot station" />
-        <p className="presentation-text">
+        <p className="presentation-text pad-right">
           L’équipe des Huskies originaire de la ville de Québec au canada et plus spécifiquement de la polyvalente de Charlesbourg. L’équipe
           des Huskies originaire de la ville de Québec au canada et plus spécifiquement de la polyvalente de Charlesbourg. L’équipe des
           Huskies originaire de la ville de Québec au canada et plus spécifiquement de la polyvalente de Charlesbourg.{" "}
         </p>
       </div>
       <div className="right-box presentation-box">
-        <p className="presentation-text">
+        <p className="presentation-text pad-left">
           L’équipe des Huskies originaire de la ville de Québec au canada et plus spécifiquement de la polyvalente de Charlesbourg. L’équipe
           des Huskies originaire de la ville de Québec au canada et plus spécifiquement de la polyvalente de Charlesbourg. L’équipe des
           Huskies originaire de la ville de Québec au canada et plus spécifiquement de la polyvalente de Charlesbourg.{" "}
