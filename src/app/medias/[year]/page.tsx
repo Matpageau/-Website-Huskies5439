@@ -1,7 +1,7 @@
 import SeasonSelector from "@/components/SeasonSelector/SeasonSelector";
-import Image from "next/image";
 import "./medias.css"
 import { getYearPhotos } from "@/Utils/yearGallery";
+import MediaGallery from "@/components/MediaGallery/MediaGallery";
 
 export default async function Medias({
   params,
@@ -20,9 +20,7 @@ export default async function Medias({
       <SeasonSelector year={year}></SeasonSelector>
       <div className="content">
         <div className="photo-gallery-container">
-          {photos.map((photo, index) => (
-            <Image className="galery-photo" key={index} src={photo} alt={`Photo ${index}`} width={500} height={500}></Image>
-          ))}
+          <MediaGallery photos={photos}></MediaGallery>
         </div>
       </div>
     </>
