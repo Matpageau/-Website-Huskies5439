@@ -1,0 +1,48 @@
+.sponsor_card {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+body[data-theme="dark"] .sponsor_card {
+  background-color: rgba(66, 66, 66, 0.233);
+}
+
+.sponsor-image-container {
+  align-items: center;
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sponsor-image {
+  padding: 10px;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.description_container {
+  min-height: 100%;
+  max-height: 100%;
+  padding: 10px;
+}
+
+.sponsor-image-container,
+.description_container {
+  transition: transform 0.5s cubic-bezier(.29,0,.1,.99)
+}
+
+.sponsor_card:hover .sponsor-image-container,
+.sponsor_card:hover .description_container {
+  transform: translateY(-100%);
+}
+
+.sponsor_card:hover {
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.13);
+}

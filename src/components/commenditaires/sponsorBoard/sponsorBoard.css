@@ -1,0 +1,8 @@
+.sponsor_board {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}

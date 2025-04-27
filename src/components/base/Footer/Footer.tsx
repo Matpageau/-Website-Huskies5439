@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import "./Footer.css"
-import Toggle from '../Toggle/Toggle'
+import Toggle from '../Theme/Toggle'
 
 interface FooterProps {
   initialTheme: "light" | "dark";

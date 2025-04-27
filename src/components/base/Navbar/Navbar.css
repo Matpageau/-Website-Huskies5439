@@ -41,6 +41,10 @@
   text-wrap: nowrap;
 }
 
+.nav_btn:hover {
+  color: rgb(88, 88, 88);
+}
+
 .nav_btn > a {
   padding: 10px;
 }

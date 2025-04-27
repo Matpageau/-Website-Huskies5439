@@ -1,7 +1,7 @@
-import SeasonSelector from "@/components/SeasonSelector/SeasonSelector";
+import SeasonSelector from "@/components/saisons/SeasonSelector/SeasonSelector";
 import "./medias.css"
 import { getYearPhotos } from "@/Utils/yearGallery";
-import MediaGallery from "@/components/MediaGallery/MediaGallery";
+import MediaGallery from "@/components/Medias/MediaGallery/MediaGallery";
 
 export default async function Medias({
   params,
@@ -10,6 +10,7 @@ export default async function Medias({
 }) {
   const { year } = await params;
   const photos = await getYearPhotos(year)
+  
   
   return (
     <>

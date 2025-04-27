@@ -30,7 +30,6 @@ const EventData: React.FC<EventProp> = async ({ event_code }) => {
   const eventWLT = getEventWLT(matchsData)  
 
   const sortedMatchData = matchsData.sort((a, b) => {
-    // Priority order for comp_level
     const compLevelOrder: { [key: string]: number } = {
       qm: 1,
       qf: 2,

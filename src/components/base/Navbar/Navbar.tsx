@@ -66,11 +66,9 @@ const Navbar = () => {
         </div>
         <div className="navbar_btnContainer_ls ss-hidden">
           {menuLinks.map((link) => (
-            <div key={link.href} className="nav_btn">
-              <Link className="font26" href={link.href}>
-                {link.label}
-              </Link>
-            </div>
+            <Link key={link.href} className="nav_btn font26" href={link.href}>
+              {link.label}
+            </Link>
           ))}
         </div>
       </nav>

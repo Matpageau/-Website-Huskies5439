@@ -1,6 +1,6 @@
 :root {
   --blue: #0953BF;
-  --black-background: #080808;
+  --black-background: #111111;
   --board-color: white;
   --board-red-color: rgb(119, 42, 42);
   --board-blue-color: rgb(45, 45, 90);
@@ -60,6 +60,7 @@ a {
 }
 
 .page-title {
+  text-align: center;
   font-size: 146px;
   color: var(--blue);
   text-shadow: 0px 4px 200px var(--blue);
@@ -264,5 +265,11 @@ a {
   .icon {
     height: 10px;
     width: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-title {
+    font-size: 46px;
   }
 }

@@ -4,8 +4,8 @@ import "./globals.css";
 import { cookies } from "next/headers"; // Import cookies for SSR
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/base/Navbar/Navbar";
+import Footer from "@/components/base/Footer/Footer";
 import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
