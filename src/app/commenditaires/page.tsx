@@ -1,6 +1,6 @@
 import "./sponsors.css"
-import SponsorBoard from "@/components/commenditaires/sponsorBoard/sponsorBoard";
-import SponsorCard from "@/components/commenditaires/sponsorCard/sponsorCard";
+import SponsorBoard from "@/components/commenditaires/SponsorBoard/SponsorBoard";
+import SponsorCard from "@/components/commenditaires/SponsorCard/SponsorCard";
 
 export default async function Sponsors() {  
   return (

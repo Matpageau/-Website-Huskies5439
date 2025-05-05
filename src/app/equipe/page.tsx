@@ -1,5 +1,5 @@
 import Separator from "@/components/base/Separator/Separator";
-import MediaGallery from "@/components/Medias/MediaGallery/mediaGallery";
+import MediaGallery from "@/components/Medias/MediaGallery/MediaGallery";
 import { getMentorsPhotos, getStudentsPhotos } from "@/Utils/galleries";
 
 export default async function Equipe() {

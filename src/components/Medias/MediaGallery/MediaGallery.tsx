@@ -1,5 +1,5 @@
 "use client"
-import "./mediaGallery.css"
+import "./MediaGallery.css"
 import Mansory from "react-masonry-css"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
