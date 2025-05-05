@@ -1,4 +1,4 @@
-import "./sponsorBoard.css"
+import "./SponsorBoard.css"
 import React from 'react'
 
 interface SponsorBoardProps {

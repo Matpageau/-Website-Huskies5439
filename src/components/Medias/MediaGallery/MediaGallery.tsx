@@ -3,7 +3,7 @@ import "./MediaGallery.css"
 import Mansory from "react-masonry-css"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import FullscreenImage from './FullscreenImage/fullscreenImage'
+import FullscreenImage from './FullscreenImage/FullscreenImage'
 import { animate } from 'animejs'
 
 interface MediaGalleryProps {

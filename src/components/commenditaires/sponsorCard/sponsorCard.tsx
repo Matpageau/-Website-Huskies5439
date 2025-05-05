@@ -1,5 +1,5 @@
 "use client"
-import "./sponsorCard.css"
+import "./SponsorCard.css"
 import React from 'react'
 import Image from "next/image"
 
