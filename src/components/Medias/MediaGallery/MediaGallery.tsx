@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FullscreenImage from './FullscreenImage/FullscreenImage'
 
 interface MediaGalleryProps {
@@ -9,14 +9,22 @@ interface MediaGalleryProps {
 
 const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
   const [fullscreenPhoto, setFullscreenPhoto] = useState<string | null>(null)
+  const [originRect, setOrigenRect] = useState<DOMRect | null>(null)
 
-  const handleClick = (photo: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLImageElement>, photo: string) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setOrigenRect(rect)
     setFullscreenPhoto(photo)
   }
 
-  const closeFullscreen = () => {
+  const closeFullscreen = () => {    
     setFullscreenPhoto(null)
+    setOrigenRect(null)
   }
+
+  useEffect(() => {
+
+  }, [setFullscreenPhoto])
 
   return (
     <>
@@ -24,7 +32,7 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
         <Image
           key={index}
           className="galery-photo"
-          onClick={() => handleClick(photo)}
+          onClick={(e) => handleClick(e, photo)}
           src={photo}
           alt={`Photo ${index}`}
           width={500}
@@ -33,7 +41,11 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
       ))}
 
       {fullscreenPhoto && (
-        <FullscreenImage src={fullscreenPhoto} onClose={closeFullscreen}/>
+        <FullscreenImage 
+          src={fullscreenPhoto}
+          onClose={closeFullscreen}
+          originRect={originRect}
+        />
       )}
     </>
   )
