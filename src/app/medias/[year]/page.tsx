@@ -1,6 +1,6 @@
 import SeasonSelector from "@/components/saisons/SeasonSelector/SeasonSelector";
 import "./medias.css"
-import { getYearPhotos } from "@/Utils/yearGallery";
+import { getYearPhotos } from "@/Utils/galleries";
 import MediaGallery from "@/components/Medias/MediaGallery/mediaGallery";
 
 export default async function Medias({
@@ -20,9 +20,11 @@ export default async function Medias({
       </div>
       <SeasonSelector year={year}></SeasonSelector>
       <div className="content">
-        <div className="photo-gallery-container">
+        {photos.length > 0 ? 
           <MediaGallery photos={photos}></MediaGallery>
-        </div>
+        :
+          <h2 style={{justifySelf: "center", fontStyle: "italic"}}>Aucune photos pour l&apos;instant...</h2>
+        }
       </div>
     </>
   );

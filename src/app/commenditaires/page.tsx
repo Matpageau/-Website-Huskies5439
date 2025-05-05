@@ -7,7 +7,7 @@ export default async function Sponsors() {
     <>
       <meta name="description" content="Photos Huskies 5439"/>
       <div className="presentation-container">
-        <h1 className="page-title">Nos commenditaires</h1>
+        <h1 className="page-title">Nos Commenditaires</h1>
       </div>
       <div className="content">
           <SponsorBoard>

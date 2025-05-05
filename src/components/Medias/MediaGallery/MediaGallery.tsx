@@ -1,18 +1,20 @@
 "use client"
 import "./mediaGallery.css"
+import Mansory from "react-masonry-css"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import FullscreenImage from './FullscreenImage/fullscreenImage'
 import { animate } from 'animejs'
 
 interface MediaGalleryProps {
-  photos: string[]
+  photos: string[],
+  columnCount?: number
 }
 
-const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
+const MediaGallery: React.FC<MediaGalleryProps> = ({photos, columnCount = 3}) => {
   const [fullscreenPhoto, setFullscreenPhoto] = useState<string | null>(null)
   const [originRect, setOrigenRect] = useState<DOMRect | null>(null)
-
+  
   const handleClick = (e: React.MouseEvent<HTMLImageElement>, photo: string) => {
     const rect = e.currentTarget.getBoundingClientRect()
     setOrigenRect(rect)
@@ -38,8 +40,18 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
 
   }, [setFullscreenPhoto])
 
+  const breakpointColumnsObj = {
+    default: columnCount,
+    1000: columnCount - 1,
+    750: columnCount - 2,
+  }
+
   return (
-    <>
+    <Mansory
+      breakpointCols={breakpointColumnsObj}
+      className="photo-gallery-container"
+      columnClassName="gallery-column"
+    >        
       {photos.map((photo, index) => (
         <Image
           key={index}
@@ -61,7 +73,7 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
           originRect={originRect}
         />
       )}
-    </>
+    </Mansory>
   )
 }
 
