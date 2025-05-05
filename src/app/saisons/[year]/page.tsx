@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { getTeamEvents } from "@/app/actions/api/get-team-events";
-import SeasonSelector from "@/components/saisons/SeasonSelector/SeasonSelector";
-import Separator from "@/components/base/Separator/Separator";
+import SeasonSelector from "../../../../components/Saisons/SeasonSelector/SeasonSelector";
+import Separator from "../../../../components/Base/Separator/Separator";
 import { getYearData } from "@/Utils/yearData";
 import React, { Suspense } from "react"
 import "./saisons.css"
 import { MapPin, School } from "lucide-react";
-import YouTubeEmbed from "@/components/saisons/YoutubeEmbed/YoutubeEmbed";
-import EventData from "@/components/saisons/EventData/EventData";
+import YouTubeEmbed from "../../../../components/Saisons/YoutubeEmbed/YoutubeEmbed";
+import EventData from "../../../../components/Saisons/EventData/EventData";
 import { getEventWLT } from "@/app/actions/eventScoring";
 import { getMatchsResults } from "@/app/actions/api/get-matchs-results";
 import Link from "next/link";

@@ -1,7 +1,7 @@
-import SeasonSelector from "@/components/saisons/SeasonSelector/SeasonSelector";
+import SeasonSelector from "../../../../components/Saisons/SeasonSelector/SeasonSelector";
 import "./medias.css"
 import { getYearPhotos } from "@/Utils/galleries";
-import MediaGallery from "@/components/Medias/MediaGallery/MediaGallery";
+import MediaGallery from "../../../../components/Medias/MediaGallery/MediaGallery";
 
 export default async function Medias({
   params,
