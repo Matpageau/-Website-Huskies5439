@@ -1,4 +1,4 @@
-import "./FullscreenImage.css"
+import "./fullscreenImage.css"
 import Image from "next/image"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { animate } from "animejs"
@@ -63,7 +63,6 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ src, onClose, originR
       let finalWidthPercentage = 80
       let finalHeightPercentage = originHeightPercentage * (finalWidthPercentage / originWidthPercentage)
       
-
       if (finalHeightPercentage > 75) {
         finalHeightPercentage = 75
         finalWidthPercentage = originWidthPercentage * (finalHeightPercentage / originHeightPercentage)

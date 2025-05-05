@@ -4,14 +4,6 @@
   font-size: 16;
 }
 
-.galery-photo {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  margin-bottom: 16px;
-  border-radius: 10px;
-}
-
 @media (max-width: 1000px) {
   .photo-gallery-container {
     column-count: 2;

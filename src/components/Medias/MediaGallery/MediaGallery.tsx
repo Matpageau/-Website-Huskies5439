@@ -1,7 +1,9 @@
 "use client"
+import "./mediaGallery.css"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import FullscreenImage from './FullscreenImage/FullscreenImage'
+import FullscreenImage from './FullscreenImage/fullscreenImage'
+import { animate } from 'animejs'
 
 interface MediaGalleryProps {
   photos: string[]
@@ -15,6 +17,16 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
     const rect = e.currentTarget.getBoundingClientRect()
     setOrigenRect(rect)
     setFullscreenPhoto(photo)
+  }
+
+  const handleOnTouch = (e: React.MouseEvent<HTMLImageElement>, enter: boolean) => {
+    const target = e.currentTarget
+
+    animate(target, {
+      scale: enter ? 1.06 : 1,
+      duration: 200,
+      ease: "inOutBack(1)"
+    })
   }
 
   const closeFullscreen = () => {    
@@ -33,6 +45,8 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos}) => {
           key={index}
           className="galery-photo"
           onClick={(e) => handleClick(e, photo)}
+          onMouseOver={(e) => handleOnTouch(e, true)}
+          onMouseLeave={(e) => handleOnTouch(e, false)}
           src={photo}
           alt={`Photo ${index}`}
           width={500}
