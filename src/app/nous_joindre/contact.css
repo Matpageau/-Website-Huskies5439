@@ -1,0 +1,85 @@
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-separation {
+  display: flex;
+  gap: 150px;
+}
+
+.left-image {
+  border-radius: 20px;
+  height: 80vh;
+  width: auto;
+}
+
+.contact-form-container {
+  min-width: 350px;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 20px;
+  padding: 30px;
+  height: fit-content;
+  background-color: var(--background-color);
+  box-shadow: 10px 10px 10px rgba(101, 137, 255, 0.24);
+}
+
+.form-title {
+  text-align: center;
+}
+
+.input-row {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input-field {
+  height: 50px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.message-input {
+  resize: vertical;
+  overflow: auto;
+  min-height: 150px;
+  max-height: 400px;
+  font-family: inherit;
+}
+
+.error-message {
+  position: absolute;
+  transform: translateY(-25px);
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@media (max-width: 1400px) {
+  .contact-separation {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contact-separation {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact-separation {
+    flex-direction: column-reverse;
+  }
+
+  .left-image {
+    display: none;
+  }
+}
