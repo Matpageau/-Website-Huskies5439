@@ -1,41 +1,77 @@
 "use client"
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
-import "./SeasonSelector.css"
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import "./SeasonSelector.css";
 
 interface SeasonSelectorProps {
   year: string;
 }
 
 const SeasonSelector: React.FC<SeasonSelectorProps> = ({ year }) => {
-  const [season, setSeason] = useState(year)
-  const router = useRouter()
+  const router = useRouter();
+  const minYear = 2015;
+  const maxYear = 2025;
+
+  const [season, setSeason] = useState(Number(year));
+  const [index, setIndex] = useState(Number(year));
+  const [thumbLeft, setThumbLeft] = useState(0);
+  const sliderRef = useRef<HTMLInputElement>(null);
+
+  const updateThumbPosition = useCallback(() => {
+    if (!sliderRef.current) return;
+    const slider = sliderRef.current;
+    const percent = (index - minYear) / (maxYear - minYear);
+    const sliderWidth = slider.offsetWidth;
+    const thumbWidth = 25;
+    const padding = thumbWidth / 2;
+
+    const left = percent * (sliderWidth - thumbWidth) + padding;
+    setThumbLeft(left);
+  }, [index]);
+
+  useLayoutEffect(() => {
+    updateThumbPosition();
+  }, [updateThumbPosition])
 
   useEffect(() => {
-    if(season !== year) {
-      router.push(season)
-    }
-  }, [season, year, router])
-  
-  return (
-    <select 
-      className="font26 seasonSelector"
-      id="seasonSelector"
-      onChange={(e) => setSeason(e.target.value)}
-      value={season}>
-        <option value="2025">Saison 2025</option>
-        <option value="2024">Saison 2024</option>
-        <option value="2023">Saison 2023</option>
-        <option value="2022">Saison 2022</option>
-        <option value="2021">Saison 2021</option>
-        <option value="2020">Saison 2020</option>
-        <option value="2019">Saison 2019</option>
-        <option value="2018">Saison 2018</option>
-        <option value="2017">Saison 2017</option>
-        <option value="2016">Saison 2016</option>
-        <option value="2015">Saison 2015</option>
-    </select>
-  )
-}
+    window.addEventListener('resize', updateThumbPosition);
+    return () => window.removeEventListener('resize', updateThumbPosition);
+  }, [updateThumbPosition]);
 
-export default SeasonSelector
+  useEffect(() => {
+    if (season.toString() !== year) {
+      router.push(season.toString());
+    }
+  }, [season, year, router]);
+
+  const commitChange = () => {
+    setSeason(index);
+  };
+
+  return (
+    <div className='season-slider-container'>
+      <input
+        ref={sliderRef}
+        className='slider'
+        type="range"
+        min={minYear}
+        max={maxYear}
+        step={1}
+        value={index}
+        onChange={(e) => setIndex(Number(e.target.value))}
+        onMouseUp={commitChange}
+        onTouchEnd={commitChange}
+      />
+      <div
+        className="slider-thumb-label font20"
+        style={{
+          left: `${thumbLeft}px`
+        }}
+      >
+        {index}
+      </div>
+    </div>
+  );
+};
+
+export default SeasonSelector;

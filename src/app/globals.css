@@ -2,7 +2,7 @@
   --blue: #0953BF;
   --black-background: #111111;
   --board-color: white;
-  --board-red-color: rgb(119, 42, 42);
+  --board-red-color: rgb(112, 23, 23);
   --board-blue-color: rgb(45, 45, 90);
   --link-color: #4988e7;
   --background-color: white;
@@ -67,14 +67,16 @@ a {
 }
 
 .presentation-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .Loading-text {
-  margin-top: 35px;
-  font-size: 96px;
+  font-style: italic;
+  font-size: 38px;
   color: var(--blue);
 }
 
@@ -161,7 +163,7 @@ a {
   }
   
   .Loading-text {
-    font-size: 60px;
+    font-size: 36px;
   }
 
   .page-title {
@@ -206,7 +208,7 @@ a {
 
 @media (max-width: 1000px) {
   .Loading-text {
-    font-size: 52px;
+    font-size: 30px;
   }
 
   .font64 {

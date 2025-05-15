@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${isOpen ? "fixed" : ""}`}>
-        <Image className="topleft_logo ss-hidden" src="/images/huskies_logo.jpg" alt="Logo.jpg" width={60} height={60} />
+        <Image className="topleft_logo ss-hidden" src="/images/huskies_logo.png" alt="Logo.jpg" width={60} height={60} />
         <div className="hamburger" onClick={() => setOpen(!isOpen)} ref={buttonRef}>
           <AlignJustify height={30} width={30} />
         </div>

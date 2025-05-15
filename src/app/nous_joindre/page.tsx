@@ -68,7 +68,7 @@ export default function Contact() {
             <Image src="/images/robotSuspendu.jpg" className="left-image" width={500} height={1000} alt="Robot 2024"></Image>
           </div>
           <form className="contact-form-container" onSubmit={handleSubmit}>
-            <h1 className="form-title font40">Remplisser le formulaire pour nous rejoindre !</h1>
+            <h1 className="form-title font40">Remplissez le formulaire pour nous rejoindre !</h1>
             <div className="input-row">
               <div className="input-container">
                 {errors.lastName && <p className="error-message">{errors.lastName}</p>}

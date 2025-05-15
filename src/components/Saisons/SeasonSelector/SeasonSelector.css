@@ -1,43 +1,58 @@
-.seasonSelector {
-  position: absolute;
-  left: 2%;
-  top: 150px;
-  width: 13%;
-  max-width: 350px;
-  height: 50px;
-  font-size: inherit;
-  font-family: var(--font-inter-sans), sans-serif;
-  text-align: center;
-  border-radius: 10px;
-  background-color: inherit;
-  color: inherit;
+.season-slider-container {
+  width: 60%;
+  position: relative;
+  margin: 2rem auto;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 12px;
+  background: #d3d3d3;
   outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
 
-.seasonSelector option {
-  background-color: inherit;
-  color: black;
+.slider:hover {
+  opacity: 1;
 }
 
-@media (max-width: 1400px) {
-  .seasonSelector {
-    top: 175px;
-  }
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  scale: 1;
+  transition: 200ms scale ease-in-out;
 }
 
-@media (max-width: 1200px) {
-  .seasonSelector {
-    top: 130px;
-    margin-top: 20px;
-    max-width: none;
-    position: unset;
-    justify-self: center;
-    width: 50%;
-  }
+.slider::-webkit-slider-thumb:hover {
+  scale: 1.1;
 }
 
-@media (max-width: 750px) {
-  .seasonSelector {
-    height: 35px;
-  }
+.slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: var(--blue);
+  cursor: pointer;
+}
+
+.slider-thumb-label {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%) translateY(-140%);
+  background: var(--blue);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
 }
