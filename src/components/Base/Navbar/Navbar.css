@@ -6,7 +6,7 @@
   width: 100%;
   padding: 10px 0px;
   background-color: color-mix(in srgb, var(--background-color) 30%, transparent);
-  backdrop-filter: blur(2);
+  backdrop-filter: blur(2px);
 }
 
 .navbar_btnContainer_ls {
