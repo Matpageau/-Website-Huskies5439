@@ -24,7 +24,6 @@ body[data-theme="dark"] .game-logo {
 }
 
 .robotImage-container {
-  justify-content: right;
   align-items: center;
   width: fit-content;
 }
