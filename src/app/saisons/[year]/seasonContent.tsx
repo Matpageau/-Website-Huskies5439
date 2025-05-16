@@ -49,7 +49,7 @@ export default async function SaisonContent({ year }: {year: string}) {
         </div>
         <Separator />
         <div className="robot-container flex-row">
-          <div>
+          <div className="left-infos-container">
             <div className="team-infos-container">
               <div className="team-profile flex-row">
                 {yearData.teamAvatar != "" ? 

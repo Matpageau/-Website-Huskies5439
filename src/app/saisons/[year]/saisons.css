@@ -23,6 +23,10 @@ body[data-theme="dark"] .game-logo {
   background-color: rgba(66, 66, 66, 0.233);
 }
 
+.left-infos-container {
+  width: 50%;
+}
+
 .robotImage-container {
   align-items: center;
   width: fit-content;
