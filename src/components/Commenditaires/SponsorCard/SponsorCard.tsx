@@ -17,7 +17,7 @@ const SponsorCard: React.FC<ISponsorCard> = ({sponsorName, sponsorImage, descrip
         <Image className="sponsor-image" src={sponsorImage} alt={`${sponsorName} logo`} height={800} width={800} />
       </div>
       <div className="description_container">
-        <p className="font26">{description}</p>
+        <p>{description}</p>
       </div>
     </div>
   )

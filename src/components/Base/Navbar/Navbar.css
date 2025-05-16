@@ -1,9 +1,12 @@
 .navbar {
-  position: absolute;
-  top: 10px;
+  position: fixed;
+  top: 0;
   display: flex;
   z-index: 101;
   width: 100%;
+  padding: 10px 0px;
+  background-color: color-mix(in srgb, var(--background-color) 30%, transparent);
+  backdrop-filter: blur(2);
 }
 
 .navbar_btnContainer_ls {
@@ -41,6 +44,10 @@
   text-wrap: nowrap;
 }
 
+.active {
+  color: var(--blue);
+}
+
 .nav_btn:hover {
   color: rgb(88, 88, 88);
 }
@@ -76,6 +83,7 @@
 @media (max-width: 1200px) {  
   .navbar {
     width: fit-content;
+    background-color: transparent;
   }
   
   .hamburger {

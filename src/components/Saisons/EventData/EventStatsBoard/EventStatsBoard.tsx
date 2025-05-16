@@ -33,27 +33,27 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
       <thead>
         <tr className="ss-hidden">
           <th><CirclePlay height={15} className="icon"/></th>
-          <th className="font20">Match</th>
-          <th colSpan={3} className="font20">Alliance Rouge</th>
-          <th colSpan={3} className="font20">Alliance Bleu</th>
-          <th colSpan={2} className="font20">Scores</th>
+          <th>Match</th>
+          <th colSpan={3}>Alliance Rouge</th>
+          <th colSpan={3}>Alliance Bleu</th>
+          <th colSpan={2}>Scores</th>
         </tr>
         <tr className="hidden_lg">
           <th rowSpan={2}><CirclePlay height={15} className="icon video"/></th>
-          <th rowSpan={2} className="font20">Match</th>
-          <th colSpan={6} className="font20">Alliance Rouge</th>
-          <th colSpan={2} className="font20">Score Rouge</th>
+          <th rowSpan={2}>Match</th>
+          <th colSpan={6}>Alliance Rouge</th>
+          <th colSpan={2}>Score Rouge</th>
         </tr>
         <tr className="hidden_lg">
-          <th colSpan={6} className="font20">Alliance Bleu</th>
-          <th colSpan={2} className="font20">Score Bleu</th>
+          <th colSpan={6}>Alliance Bleu</th>
+          <th colSpan={2}>Score Bleu</th>
         </tr>
 
       </thead>
       <tbody>
         {firstQualificationIndex !== -1 && (
           <tr>
-            <th colSpan={10} className="font20">Qualifications</th>
+            <th colSpan={10}>Qualifications</th>
           </tr>
         )}
         
@@ -61,50 +61,50 @@ const EventStatsBoard: React.FC<EventBoardProps> = ({matchsDatas, event_code}) =
           <React.Fragment key={index}>
             {index === firstQfIndex && (
               <tr>
-                <th colSpan={10} className="font20">Quart de finales</th>
+                <th colSpan={10}>Quart de finales</th>
               </tr>
             )}
             {index === firstSfIndex && (
               <tr>
-                <th colSpan={10} className="font20">Demis finales</th>
+                <th colSpan={10}>Demis finales</th>
               </tr>
             )}
             {index === firstFIndex && (
               <tr>
-                <th colSpan={10} className="font20">Finales</th>
+                <th colSpan={10}>Finales</th>
               </tr>
             )}
             <tr className="ss-hidden">
               <td>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay height={15} className="icon video"/></Link> : <></>}</td>
-              <td className="font16">{getMatchLabel(match.comp_level, match.match_number, match.set_number)}</td>
+              <td className="font-small">{getMatchLabel(match.comp_level, match.match_number, match.set_number)}</td>
 
               {match.alliances.red.team_keys.map((team: string) => (
-                <td key={team} className={`font16 redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
+                <td key={team} className={`font-small redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
               ))}
   
               {match.alliances.blue.team_keys.map((team: string) => (
-                <td key={team} className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
+                <td key={team} className={`font-small blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
               ))}
 
-              <td className={`font16 redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${match.alliances.red.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints ? match.score_breakdown.red.totalPoints : match.score_breakdown.red.total_points}</td>
-              <td className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints ? match.score_breakdown.blue.totalPoints : match.score_breakdown.blue.total_points}</td>
+              <td className={`font-small redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${match.alliances.red.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints ? match.score_breakdown.red.totalPoints : match.score_breakdown.red.total_points}</td>
+              <td className={`font-small blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints ? match.score_breakdown.blue.totalPoints : match.score_breakdown.blue.total_points}</td>
             </tr>
             <tr className="hidden_lg">
               <td rowSpan={2}>{match.videos[0] ? <Link href={`https://youtube.com/watch?v=${match.videos[0].key}`} target="_blank"><CirclePlay color='Blue' height={15} className="icon video"/></Link> : <></>}</td>
-              <td rowSpan={2} className="font16">{getMatchLabel(match.comp_level, match.match_number, match.set_number)}</td>
+              <td rowSpan={2} className="font-small">{getMatchLabel(match.comp_level, match.match_number, match.set_number)}</td>
 
               {match.alliances.red.team_keys.map((team: string) => (
-                <td colSpan={2} key={team} className={`font16 redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
+                <td colSpan={2} key={team} className={`font-small redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
               ))}
 
-              <td colSpan={2} className={`font16 redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${match.alliances.red.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints}</td>
+              <td colSpan={2} className={`font-small redAlliance ${match.winning_alliance == "red" ? "bold" : ""} ${match.alliances.red.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.red.totalPoints}</td>
             </tr>
             <tr className="hidden_lg">
               {match.alliances.blue.team_keys.map((team: string) => (
-                <td colSpan={2} key={team} className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
+                <td colSpan={2} key={team} className={`font-small blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${team == "frc5439" ? "currentTeam" : ""}`}><Link className="link" href={`https://www.thebluealliance.com/team/${team.replace("frc", "")}/${event_code.slice(0,4)}`}>{team.replace("frc", "")}</Link></td>
               ))}
 
-              <td colSpan={2} className={`font16 blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.blue.totalPoints}</td>
+              <td colSpan={2} className={`font-small blueAlliance ${match.winning_alliance == "blue" ? "bold" : ""} ${match.alliances.blue.team_keys.includes("frc5439") ? "currentTeam" : ""}`}>{match.score_breakdown.blue.totalPoints}</td>
             </tr>
           </React.Fragment>
         ))}

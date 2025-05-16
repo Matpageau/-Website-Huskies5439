@@ -43,8 +43,8 @@ export default async function SaisonContent({ year }: {year: string}) {
         <div className="game-presentation-container flex-row">
           <img className="game-logo" src={yearData.gameLogo} alt="gameLogo" />
           <div>
-            <h1 className="font64">{yearData.gameName.toUpperCase()}</h1>
-            <p className="font20 semi-bold">{yearData.gameDescription}</p>
+            <h1 className="font-big">{yearData.gameName.toUpperCase()}</h1>
+            <p className="semi-bold">{yearData.gameDescription}</p>
           </div>
         </div>
         <Separator />
@@ -58,16 +58,16 @@ export default async function SaisonContent({ year }: {year: string}) {
                    <></>
                 }
                 <div className="teamNameTBA">
-                  <h1 className="font64">Huskies 5439</h1>
+                  <h1 className="font-big">Huskies 5439</h1>
                   <Link href={`https://thebluealliance.com/team/5439/${year}`} className="link" target="_blank">thebluealliance.com</Link>
                 </div>
               </div>
               <div className="team-location-container">
-                <div className="iconText font20 flex-row">
+                <div className="iconText flex-row">
                   <School className="icon"/>
                   <p>Polyvalente de Charlesbourg</p>
                 </div>
-                <div className="iconText font20">
+                <div className="iconText">
                   <MapPin className="icon"/>
                   <p>Québec, Québec, Canada</p>
                 </div>
@@ -77,7 +77,7 @@ export default async function SaisonContent({ year }: {year: string}) {
               <h1 className="font40">Caractéristiques du robot</h1>
               <ul>
                 {yearData.robotAttribut.map((attribute, index) => (
-                  <li key={index} className="font20">{attribute}</li>
+                  <li key={index}>{attribute}</li>
                 ))}
               </ul>
             </div>
@@ -85,7 +85,7 @@ export default async function SaisonContent({ year }: {year: string}) {
           <div className="robotImage-container flex-col">
             <img src={yearData.robotImage} className="robotImage" alt={year + "robot"} />
             {yearData.robotName != "" ? 
-              <h4 className="font20 robotName">Nom du robot: {yearData.robotName}</h4>
+              <h4 className="robotName">Nom du robot: {yearData.robotName}</h4>
               :
               <></>
             }
@@ -98,8 +98,8 @@ export default async function SaisonContent({ year }: {year: string}) {
         }
         <Separator />
         <div className="event-result-container">
-          <h1 className="font40">Résultats d&apos;évènements</h1>
-          <p className="font20">L&apos;équipe a terminé la saison avec {totalWin} victoires, {totalLose} défaites et {totalTie} égalitées</p>
+          <h1 className="font-big">Résultats d&apos;évènements</h1>
+          <p>L&apos;équipe a terminé la saison avec {totalWin} victoires, {totalLose} défaites et {totalTie} égalitées</p>
           <Suspense fallback={<p>Chargement des compétitons...</p>}>
             {teamEventsCodes.map((event: string, index: number) => (
               <EventData key={index} event_code={event}/>

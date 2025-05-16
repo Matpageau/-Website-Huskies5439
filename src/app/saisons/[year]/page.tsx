@@ -12,6 +12,7 @@ export default async function Saisons({
   
   return (
     <>
+      <meta name="description" content="Saison Huskies 5439"/>
       <div className="presentation-container">
         <h1 className="page-title">Nos Saisons</h1>
         <SeasonSelector year={year}></SeasonSelector>

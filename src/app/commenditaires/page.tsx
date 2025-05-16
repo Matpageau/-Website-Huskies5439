@@ -5,7 +5,7 @@ import SponsorCard from "../../components/Commenditaires/SponsorCard/SponsorCard
 export default async function Sponsors() {  
   return (
     <>
-      <meta name="description" content="Photos Huskies 5439"/>
+      <meta name="description" content="Commenditaires Huskies 5439"/>
       <div className="presentation-container">
         <h1 className="page-title">Nos Commenditaires</h1>
       </div>

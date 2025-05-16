@@ -59,6 +59,7 @@ export default function Contact() {
 
   return (
     <>
+      <meta name="description" content="Rejoindre Huskies 5439"/>
       <div className="presentation-container">
         <h1 className="page-title">Nous joindre</h1>
       </div>
@@ -68,7 +69,7 @@ export default function Contact() {
             <Image src="/images/robotSuspendu.jpg" className="left-image" width={500} height={1000} alt="Robot 2024"></Image>
           </div>
           <form className="contact-form-container" onSubmit={handleSubmit}>
-            <h1 className="form-title font40">Remplissez le formulaire pour nous rejoindre !</h1>
+            <h1 className="form-title font-large">Remplissez le formulaire pour nous rejoindre !</h1>
             <div className="input-row">
               <div className="input-container">
                 {errors.lastName && <p className="error-message">{errors.lastName}</p>}

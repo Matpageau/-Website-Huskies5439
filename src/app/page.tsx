@@ -4,6 +4,7 @@ import "./accueil.css";
 export default async function Home() {
   return (
     <>
+      <meta name="description" content="Accueil Huskies 5439"/>
       <div className="presentation-container">
         <h1 className="page-title">Huskies 5439</h1>
         <img className="team-picture" src="/images/equipe2023.jpg" alt="equipe2023" />

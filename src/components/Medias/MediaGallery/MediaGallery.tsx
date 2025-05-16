@@ -8,10 +8,12 @@ import { animate } from 'animejs'
 
 interface MediaGalleryProps {
   photos: string[],
-  columnCount?: number
+  baseColumnCount?: number,
+  columnCount_1000?: number,
+  columnCount_750?: number
 }
 
-const MediaGallery: React.FC<MediaGalleryProps> = ({photos, columnCount = 3}) => {
+const MediaGallery: React.FC<MediaGalleryProps> = ({photos, baseColumnCount = 4, columnCount_1000 = 3, columnCount_750 = 1}) => {
   const [fullscreenPhoto, setFullscreenPhoto] = useState<string | null>(null)
   const [originRect, setOrigenRect] = useState<DOMRect | null>(null)
   
@@ -41,9 +43,9 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({photos, columnCount = 3}) =>
   }, [setFullscreenPhoto])
 
   const breakpointColumnsObj = {
-    default: columnCount,
-    1000: columnCount - 1,
-    750: columnCount - 2,
+    default: baseColumnCount,
+    1000: columnCount_1000,
+    750: columnCount_750,
   }
 
   return (

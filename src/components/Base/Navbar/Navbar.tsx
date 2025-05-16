@@ -4,11 +4,14 @@ import Link from 'next/link';
 import './Navbar.css';
 import { useEffect, useRef, useState } from "react";
 import { AlignJustify } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => { 
   const [isOpen, setOpen] = useState(false);
   const [noTransition, setNoTransition] = useState(false);
   const buttonRef = useRef<HTMLDivElement | null>(null); // Reference for the hamburger button
+
+  const pathname = usePathname();
 
   const menuLinks = [
     { href: "/", label: "Accueil" },
@@ -65,18 +68,22 @@ const Navbar = () => {
           <AlignJustify height={30} width={30} />
         </div>
         <div className="navbar_btnContainer_ls ss-hidden">
-          {menuLinks.map((link) => (
-            <Link key={link.href} className="nav_btn font26" href={link.href}>
-              {link.label}
-            </Link>
-          ))}
+          {menuLinks.map((link) => {
+            const isHome = link.href == "/"
+            const isActive = isHome ? pathname == "/" : pathname.startsWith(link.href);
+            return (
+              <Link key={link.href} className={`nav_btn ${isActive ? "active" : ""}`} href={link.href}>
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       </nav>
     
       <div className={`navbar_btnContainer_ss ${isOpen ? "visible fixed" : "hidden"} ${noTransition ? "no_transition" : ""}`}>
         {menuLinks.map((link) => (
           <div key={link.href} className="nav_btn">
-            <Link className="font26" href={link.href} onClick={handleLinkClick}>
+            <Link href={link.href} onClick={handleLinkClick}>
               {link.label}
             </Link>
           </div>

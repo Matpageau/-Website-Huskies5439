@@ -17,8 +17,8 @@ export default async function Medias({
       <meta name="description" content="Photos Huskies 5439"/>
       <div className="presentation-container">
         <h1 className="page-title">Médias</h1>
+        <SeasonSelector year={year}></SeasonSelector>
       </div>
-      <SeasonSelector year={year}></SeasonSelector>
       <div className="content">
         {photos.length > 0 ? 
           <MediaGallery photos={photos}></MediaGallery>
