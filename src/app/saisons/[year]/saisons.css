@@ -4,7 +4,9 @@
 }
 
 .robot-container {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: fit-content;
 }
 
 .robot-caracteristic-container {
@@ -24,18 +26,18 @@ body[data-theme="dark"] .game-logo {
 
 .robotImage-container {
   align-items: center;
-  margin-left: auto;
+  width: 100%;
 }
 
 .robotImage {
-  height: 95%;
+  width: 100%;
+  height: auto;
   border-radius: 20px;
 }
 
 .team-profile {
   position: relative;
   align-items: center;
-  height: 100;
 }
 
 .team-logo {
@@ -73,23 +75,11 @@ body[data-theme="dark"] .game-logo {
   .robot-caracteristic-container {
     margin-top: 15px;
   }
-
-  .robot-container {
-    height: 275px;
-  }
 }
 
 @media (max-width: 1000px) {
   .team-logo {
     max-height: 55px;
-  }
-
-  .team-profile {
-    height: 55px;
-  }
-
-  .robot-container {
-    height: 240px;
   }
 }
 
@@ -111,16 +101,13 @@ body[data-theme="dark"] .game-logo {
     max-height: 40px;
   }
 
-  .team-profile {
-    height: 40px;
-  }
-
   .teamNameTBA {
     margin-left: 5px;
     top: -1px;
   }
 
   .robot-container {
+    display: flex;
     flex-direction: column;
     height: fit-content;
     gap: 10px;

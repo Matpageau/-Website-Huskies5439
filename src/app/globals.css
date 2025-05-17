@@ -191,10 +191,6 @@ a {
     height: 12px;
     width: 12px;
   }
-
-  ul {
-    padding-left: 20px;
-  }
 }
 
 @media (max-width: 750px) {
