@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import "./Toggle.css";
 
@@ -18,7 +19,7 @@ const ToggleTheme = () => {
   }, [theme])
 
   return (
-    <div className="toggle-container">
+    <div className="toggle-container flex-row">
       <input
         type="checkbox"
         id="check"

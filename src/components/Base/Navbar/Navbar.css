@@ -82,7 +82,7 @@
 
 @media (max-width: 1200px) {  
   .navbar {
-    width: fit-content;
+    backdrop-filter: blur(0px);
     background-color: transparent;
   }
   

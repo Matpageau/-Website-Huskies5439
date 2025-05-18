@@ -63,6 +63,7 @@ const Navbar = () => {
 
   return (
     <>
+      <ToggleTheme/>
       <nav className={`navbar ss-hidden flex-row`}>
         <Image className="topleft_logo" src="/images/huskies_logo.png" alt="Logo.jpg" width={60} height={60} />
         <div className="navbar_btnContainer_ls flex-row">
@@ -76,7 +77,6 @@ const Navbar = () => {
             );
           })}
         </div>
-        <ToggleTheme/>
       </nav>
       
       <nav className={`navbar ls-hidden ${isOpen ? "fixed" : ""}`}>
