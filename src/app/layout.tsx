@@ -31,8 +31,6 @@ const getInitialTheme = async () => {
   return themeCookie?.value === "dark" ? "dark" : "light";
 };
 
-
-
 export default async function RootLayout({ children }: RootLayoutProps) {
   const initialTheme = await getInitialTheme();
 
@@ -46,10 +44,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <div className="main-container">
           {children}
         </div>
-        <Analytics />
-        <SpeedInsights />
-        <Footer initialTheme={initialTheme}/>
+        <Footer/>
       </body>
+    <Analytics />
+    <SpeedInsights />
     </html>
   );
 }

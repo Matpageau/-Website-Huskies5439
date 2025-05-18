@@ -1,24 +1,34 @@
+import { useEffect, useState } from "react";
 import "./Toggle.css";
 
-// Define the prop types
-interface ToggleProps {
-  handleChange: () => void;
-  isChecked: "dark" | "light";  // Add this to control the checked state
-}
+const ToggleTheme = () => {
+  const [theme, setTheme] = useState("light");
 
-const Toggle = ({ handleChange, isChecked }: ToggleProps) => {
+  function toggleTheme() {   
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
+
+  useEffect(() => {
+    setTheme(document.body.getAttribute("data-theme") || "light")
+  }, [])
+
+  useEffect(() => {   
+    document.cookie = `theme=${theme}; path=/`;
+    document.body.setAttribute("data-theme", theme ? theme : "light");
+  }, [theme])
+
   return (
     <div className="toggle-container">
       <input
         type="checkbox"
         id="check"
-        className="toggle"
-        onChange={handleChange}
-        checked={isChecked === "dark"}
+        className="checkbox"
+        onChange={toggleTheme}
+        checked={theme === "dark"}
       />
-      <label htmlFor="check"></label>
+      <label htmlFor="check" className="checkmark-label"></label>
     </div>
   );
 };
 
-export default Toggle;
+export default ToggleTheme;

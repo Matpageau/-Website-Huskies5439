@@ -9,10 +9,7 @@
   border: 1px solid #929292;
   text-align: center;
   text-wrap: nowrap;
-}
-
-.table th {
-  background-color: var(--board-color);
+  transition: background 0.2s ease-in-out;
 }
 
 .redAlliance {

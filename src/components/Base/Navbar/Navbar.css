@@ -1,17 +1,17 @@
 .navbar {
   position: fixed;
   top: 0;
-  display: flex;
   z-index: 101;
   width: 100vw;
   padding: 10px 0px;
   background-color: color-mix(in srgb, var(--background-color) 30%, transparent);
   backdrop-filter: blur(2px);
+  transition: background 0.2s ease-in-out;
 }
 
 .navbar_btnContainer_ls {
   width: 90%;
-  display: flex;
+  align-items: center;
   justify-content: space-evenly;
   gap: 5px;
 }
@@ -20,7 +20,7 @@
   position: fixed;
   top: 10px;
   left: 0;
-  width: 100%;
+  width: 100vw;
   display: none;
   background-color: var(--background-color);
   z-index: 100;
@@ -31,14 +31,14 @@
 }
 
 .hamburger {
-  position: relative;
+  position: absolute;
   left: 10px;
   display: none;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .nav_btn {
-  display: flex;
   align-items: center;
   justify-content: center;
   text-wrap: nowrap;

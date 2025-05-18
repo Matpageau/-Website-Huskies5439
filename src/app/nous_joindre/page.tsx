@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import "./contact.css"
 import React, { useState } from "react";
 
@@ -64,70 +63,65 @@ export default function Contact() {
         <h1 className="page-title">Nous joindre</h1>
       </div>
       <div className="content contact">
-        <div className="contact-separation">
-          <div className="left-illustration">
-            <Image src="/images/robotSuspendu.jpg" className="left-image" width={500} height={1000} alt="Robot 2024"></Image>
-          </div>
-          <form className="contact-form-container" onSubmit={handleSubmit}>
-            <h1 className="form-title font-large">Remplissez le formulaire pour nous rejoindre !</h1>
-            <div className="input-row">
-              <div className="input-container">
-                {errors.lastName && <p className="error-message">{errors.lastName}</p>}
-                 <input 
-                  className='input-field'
-                  type="text"
-                  name="lastName"
-                  placeholder="Votre nom"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="input-container">
-                {errors.name && <p className="error-message">{errors.name}</p>}
+        <form className="contact-form-container" onSubmit={handleSubmit}>
+          <h1 className="form-title font-large">Remplissez le formulaire pour nous rejoindre !</h1>
+          <div className="input-row flex-row">
+            <div className="input-container">
+              {errors.lastName && <p className="error-message">{errors.lastName}</p>}
                 <input 
                 className='input-field'
                 type="text"
-                name="name"
-                placeholder="Votre prénom"
-                value={formData.name}
+                name="lastName"
+                placeholder="Votre nom"
+                value={formData.lastName}
                 onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="input-row">
-              <div className="input-container">
-                {errors.email && <p className="error-message">{errors.email}</p>}
-                <input
-                  className='input-field'
-                  type="email"
-                  name="email"
-                  placeholder="Votre adresse e-mail"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="input-row">
-              <div className="input-container">
-                {errors.message && <p className="error-message">{errors.message}</p>}
-                <textarea
-                className='input-field message-input'
-                name="message"
-                placeholder="Votre message"
-                value={formData.message}
-                onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="input-row">
-              <input
-                className='input-field'
-                type="submit"
-                value="Envoyer"
               />
             </div>
-          </form>
-        </div>
+            <div className="input-container">
+              {errors.name && <p className="error-message">{errors.name}</p>}
+              <input 
+              className='input-field'
+              type="text"
+              name="name"
+              placeholder="Votre prénom"
+              value={formData.name}
+              onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="input-row">
+            <div className="input-container">
+              {errors.email && <p className="error-message">{errors.email}</p>}
+              <input
+                className='input-field'
+                type="email"
+                name="email"
+                placeholder="Votre adresse e-mail"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="input-row">
+            <div className="input-container">
+              {errors.message && <p className="error-message">{errors.message}</p>}
+              <textarea
+              className='input-field message-input'
+              name="message"
+              placeholder="Votre message"
+              value={formData.message}
+              onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="input-row">
+            <input
+              className='input-field'
+              type="submit"
+              value="Envoyer"
+            />
+          </div>
+        </form>
       </div>
     </>
   );

@@ -23,6 +23,7 @@ body {
   font-family: var(--font-inter-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.2s ease-in-out;
 }
 
 body[data-theme="dark"] {
@@ -140,6 +141,10 @@ a {
   margin-top: 20px;
 }
 
+.ls-hidden {
+  display: none;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -179,6 +184,10 @@ a {
   
   .ss-hidden {
     display: none !important;
+  }
+
+  .ls-hidden {
+    display: initial !important;
   }
 }
 

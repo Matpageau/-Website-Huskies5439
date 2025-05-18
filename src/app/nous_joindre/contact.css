@@ -3,17 +3,6 @@
   justify-content: center;
 }
 
-.contact-separation {
-  display: flex;
-  gap: 150px;
-}
-
-.left-image {
-  border-radius: 20px;
-  height: 80vh;
-  width: auto;
-}
-
 .contact-form-container {
   min-width: 350px;
   border: 1px solid rgb(168, 168, 168);
@@ -30,7 +19,6 @@
 
 .input-row {
   margin-top: 25px;
-  display: flex;
   gap: 25px;
 }
 
@@ -59,26 +47,4 @@
   transform: translateY(-25px);
   color: red;
   margin-top: 5px;
-}
-
-@media (max-width: 1400px) {
-  .contact-separation {
-    gap: 100px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .contact-separation {
-    gap: 25px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .contact-separation {
-    flex-direction: column-reverse;
-  }
-
-  .left-image {
-    display: none;
-  }
 }
