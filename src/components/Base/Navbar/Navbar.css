@@ -80,7 +80,7 @@
   position: fixed;
 }
 
-@media (max-width: 1200px) {  
+@media (max-width: 1000px) {  
   .navbar {
     backdrop-filter: blur(0px);
     background-color: transparent;

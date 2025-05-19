@@ -181,14 +181,6 @@ a {
   .main-container {
     margin-top: 0px;
   }
-  
-  .ss-hidden {
-    display: none !important;
-  }
-
-  .ls-hidden {
-    display: initial !important;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -199,6 +191,14 @@ a {
   .icon {
     height: 12px;
     width: 12px;
+  }
+
+    .ss-hidden {
+    display: none !important;
+  }
+
+  .ls-hidden {
+    display: initial !important;
   }
 }
 
